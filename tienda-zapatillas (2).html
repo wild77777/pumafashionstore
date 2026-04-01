@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PUMA FASHION STORE | Calzado Deportivo & Urbano Ecuador</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #090c0c;
+    --white: #f2fafa;
+    --teal: #00c2b2;
+    --teal-dark: #009e90;
+    --teal-light: #33d4c6;
+    --teal-glow: rgba(0,194,178,0.18);
+    --gray: #111918;
+    --gray-mid: #1e2726;
+    --gray-light: #7a9291;
+    --wa-green: #25D366;
+    --wa-dark: #128C7E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ───── HEADER ───── */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,194,178,0.3);
+    padding: 0 6vw;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 66px;
+  }
+
+  .logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.9rem;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .logo span { color: var(--teal); }
+  .logo-icon { font-size: 1.5rem; }
+
+  nav { display: flex; align-items: center; gap: 2rem; }
+  nav a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.95rem; font-weight: 600; letter-spacing: 0.08em;
+    color: var(--gray-light); text-decoration: none; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--white); }
+
+  .btn-wa-header {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--wa-green); color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;
+    text-decoration: none; white-space: nowrap;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-wa-header:hover { background: var(--wa-dark); transform: scale(1.03); }
+  .btn-wa-header svg { width:18px; height:18px; flex-shrink:0; }
+
+  .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
+  .hamburger span { width:24px; height:2px; background:var(--white); border-radius:2px; transition:0.3s; }
+
+  /* ───── HERO ───── */
+  #hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 90px 5vw 50px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #090c0c 0%, #001a18 60%, #090c0c 100%);
+  }
+
+  .hero-bg-text {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    font-family: 'Bebas Neue', sans-serif; font-size: clamp(6rem, 18vw, 18rem);
+    color: rgba(255,255,255,0.03); white-space: nowrap; pointer-events: none;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-content { position: relative; z-index: 2; text-align: center; max-width: 700px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(0,194,178,0.15); border: 1px solid rgba(0,194,178,0.4);
+    color: var(--teal); padding: 6px 14px; border-radius: 20px;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem;
+    font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 1.2rem; animation: pulse-badge 2s infinite;
+  }
+  @keyframes pulse-badge { 0%,100%{opacity:1} 50%{opacity:0.7} }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.8rem, 7vw, 6.5rem);
+    line-height: 0.92; letter-spacing: 0.02em;
+    margin-bottom: 1.2rem;
+  }
+  .hero-title .accent { color: var(--teal); display: block; }
+
+  .hero-sub {
+    font-size: clamp(1rem, 1.8vw, 1.2rem); color: var(--gray-light);
+    margin-bottom: 2rem; max-width: 440px; line-height: 1.6;
+  }
+  .hero-sub strong { color: var(--white); }
+
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; justify-content: center; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--teal); color: var(--black);
+    font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem;
+    font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 16px 32px; border-radius: 6px; text-decoration: none;
+    border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(0,194,178,0.35);
+  }
+  .btn-primary:hover { background: var(--teal-light); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,194,178,0.55); }
+
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1.5px solid rgba(255,255,255,0.25); color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif; font-size: 1rem;
+    font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 15px 28px; border-radius: 6px; text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--white); background: rgba(255,255,255,0.06); }
+
+  .hero-stats {
+    display: flex; gap: 2rem; margin-top: 2.5rem;
+    padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);
+    justify-content: center;
+  }
+  .stat { text-align: center; }
+  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: var(--teal); }
+  .stat-label { font-size: 0.78rem; color: var(--gray-light); letter-spacing: 0.08em; text-transform: uppercase; }
+  50%{transform:translateY(-18px) rotate(-5deg)} }
+  /* ───── LOAD MORE ───── */
+  .btn-load-more {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: transparent; color: var(--teal);
+    font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem;
+    font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+    border: 2px solid var(--teal); padding: 16px 40px; border-radius: 8px;
+    cursor: pointer; transition: background 0.2s, color 0.2s, transform 0.15s;
+  }
+  .btn-load-more:hover { background: var(--teal); color: var(--black); transform: translateY(-2px); }
+  .btn-load-more:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  /* ───── IMAGE CAROUSEL ───── */
+  .pc-img-wrap {
+    position: relative; overflow: hidden;
+    background: #111a19;
+    height: 260px;
+  }
+  .pc-slides { width:100%; height:100%; position:relative; }
+  .pc-slide {
+    position:absolute; inset:0;
+    opacity:0; transition: opacity 0.35s ease;
+    pointer-events:none;
+  }
+  .pc-slide.active { opacity:1; pointer-events:auto; }
+  .pc-main-img {
+    width:100%; height:100%; object-fit:cover;
+    display:block;
+  }
+  .pc-no-img {
+    width:100%; height:100%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:5rem; opacity:0.5;
+  }
+
+  /* arrows */
+  .pc-arr {
+    position:absolute; top:50%; transform:translateY(-50%);
+    background:rgba(0,0,0,0.55); border:none; cursor:pointer;
+    color:#fff; font-size:1.6rem; line-height:1;
+    width:34px; height:44px; border-radius:4px;
+    display:flex; align-items:center; justify-content:center;
+    transition: background 0.2s, opacity 0.2s;
+    opacity:0; z-index:5;
+  }
+  .pc-img-wrap:hover .pc-arr { opacity:1; }
+  .pc-prev { left:8px; }
+  .pc-next { right:8px; }
+  .pc-arr:hover { background:rgba(0,194,178,0.8); }
+
+  /* dot indicators */
+  .pc-dots {
+    position:absolute; bottom:10px; left:50%; transform:translateX(-50%);
+    display:flex; gap:5px; z-index:5;
+  }
+  .pc-dot {
+    width:7px; height:7px; border-radius:50%;
+    background:rgba(255,255,255,0.4); border:none; cursor:pointer;
+    transition: background 0.2s, transform 0.2s; padding:0;
+  }
+  .pc-dot.on { background:var(--teal); transform:scale(1.3); }
+
+  /* counter badge */
+  .pc-count {
+    position:absolute; top:10px; right:10px;
+    background:rgba(0,0,0,0.6); color:#fff;
+    font-family:'Barlow Condensed',sans-serif; font-size:0.78rem; font-weight:700;
+    padding:3px 9px; border-radius:20px; z-index:5;
+    letter-spacing:0.05em;
+  }
+
+  /* thumbnail strip */
+  .pc-thumbs {
+    display:flex; gap:6px; padding:8px 12px;
+    overflow-x:auto; background:#0d1615;
+    scrollbar-width:none;
+  }
+  .pc-thumbs::-webkit-scrollbar { display:none; }
+  .pc-thumb {
+    flex-shrink:0; width:50px; height:50px; border-radius:5px;
+    background-size:cover; background-position:center;
+    border:2px solid transparent; cursor:pointer;
+    transition: border-color 0.2s, transform 0.15s; padding:0;
+  }
+  .pc-thumb.on { border-color:var(--teal); transform:scale(1.05); }
+  .pc-thumb:hover { border-color:rgba(0,194,178,0.5); }
+
+  @media (max-width:600px) {
+    .pc-img-wrap { height:200px; }
+    .pc-thumb { width:40px; height:40px; }
+  }
+
+  /* ───── PRODUCTS ───── */
+  #catalogo {
+    padding: 100px 6vw;
+    background: var(--black);
+  }
+
+  .section-header {
+    text-align: center; margin-bottom: 4rem;
+  }
+  .section-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.82rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--teal);
+    margin-bottom: 0.8rem; display: block;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1; letter-spacing: 0.03em;
+  }
+  .section-sub { color: var(--gray-light); margin-top: 0.8rem; font-size: 1rem; }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .product-card {
+    background: var(--gray);
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    position: relative;
+  }
+  .product-card:hover { transform: translateY(-6px); border-color: rgba(0,194,178,0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+
+  .product-badge {
+    position: absolute; top: 14px; left: 14px; z-index: 2;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem;
+    font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 4px;
+  }
+  .badge-hot { background: var(--teal); color: #000; }
+  .badge-new { background: #111; color: var(--white); border: 1px solid rgba(255,255,255,0.2); }
+  .badge-sale { background: #f5a623; color: #000; }
+
+  .product-img-wrap {
+    background: linear-gradient(135deg, #1a1a1a, #222);
+    padding: 2rem; text-align: center;
+    position: relative; overflow: hidden; height: 220px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .product-img-wrap::before {
+    content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 80%; height: 30px;
+    background: radial-gradient(ellipse, rgba(0,0,0,0.4), transparent);
+  }
+
+  .product-emoji { font-size: 6rem; transition: transform 0.3s; }
+  .product-card:hover .product-emoji { transform: scale(1.1) rotate(-5deg); }
+
+  .product-info { padding: 1.2rem 1.4rem 1.4rem; }
+
+  .product-brand {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem;
+    font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 4px;
+  }
+  .product-name {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 1.25rem;
+    font-weight: 700; margin-bottom: 8px; color: var(--white);
+  }
+
+  .product-sizes {
+    display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1rem;
+  }
+  .size-chip {
+    background: var(--gray-mid); color: var(--gray-light);
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em;
+    padding: 3px 8px; border-radius: 4px;
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+  .size-chip.out { opacity: 0.35; text-decoration: line-through; }
+
+  .product-price-row { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+  .price-current {
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--white);
+  }
+  .price-old {
+    font-size: 1rem; color: var(--gray-light); text-decoration: line-through;
+  }
+  .price-save {
+    background: rgba(0,194,178,0.15); color: var(--teal);
+    font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px;
+  }
+
+  .btn-wa-product {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; background: var(--wa-green); color: #fff;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 1rem;
+    font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+    border: none; padding: 14px; border-radius: 8px; cursor: pointer;
+    text-decoration: none; transition: background 0.2s, transform 0.15s;
+  }
+  .btn-wa-product:hover { background: var(--wa-dark); transform: scale(1.02); }
+  .btn-wa-product svg { width:18px; height:18px; }
+
+  /* ───── BENEFITS ───── */
+  #beneficios {
+    padding: 80px 6vw;
+    background: linear-gradient(180deg, #090c0c, #001a18 50%, #090c0c);
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2px; border-radius: 12px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+    margin-top: 3rem;
+  }
+
+  .benefit-item {
+    background: var(--gray); padding: 2rem 1.5rem;
+    text-align: center;
+    transition: background 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .benefit-item::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: var(--teal); transform: scaleX(0); transition: transform 0.3s;
+  }
+  .benefit-item:hover { background: #1f1f1f; }
+  .benefit-item:hover::after { transform: scaleX(1); }
+
+  .benefit-icon { font-size: 2.2rem; margin-bottom: 0.8rem; display: block; }
+  .benefit-title {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 1rem;
+    font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--white); margin-bottom: 4px;
+  }
+  .benefit-desc { font-size: 0.82rem; color: var(--gray-light); line-height: 1.5; }
+
+  /* ───── PROMOS ───── */
+  #promociones {
+    padding: 100px 6vw;
+    background: var(--black);
+  }
+
+  .promos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    margin-top: 3rem;
+  }
+
+  .promo-card {
+    border-radius: 12px; overflow: hidden; position: relative;
+    padding: 2.5rem; min-height: 220px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .promo-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+
+  .promo-red { background: linear-gradient(135deg, #001a18, #003530); }
+  .promo-dark { background: linear-gradient(135deg, #111, #1a1a1a); }
+  .promo-gold { background: linear-gradient(135deg, #001614, #00302b); }
+
+  .promo-tag {
+    display: inline-block; padding: 5px 12px; border-radius: 20px;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem;
+    font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 1rem; width: fit-content;
+  }
+  .tag-red { background: rgba(0,194,178,0.2); color: var(--teal); border: 1px solid rgba(0,194,178,0.35); }
+  .tag-white { background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.15); }
+  .tag-gold { background: rgba(0,194,178,0.15); color: var(--teal-light); border: 1px solid rgba(0,194,178,0.3); }
+
+  .promo-title {
+    font-family: 'Bebas Neue', sans-serif; font-size: 2rem;
+    line-height: 1; color: var(--white); margin-bottom: 0.5rem;
+  }
+  .promo-desc { color: var(--gray-light); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.2rem; }
+
+  .promo-emoji { position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); font-size: 5rem; opacity: 0.18; }
+
+  .btn-promo {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem;
+    font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 10px 20px; border-radius: 6px; cursor: pointer;
+    text-decoration: none; transition: 0.2s; width: fit-content;
+    border: none;
+  }
+  .btn-promo-red { background: var(--teal); color: #000; }
+  .btn-promo-red:hover { background: var(--teal-light); }
+  .btn-promo-white { background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.2); }
+  .btn-promo-white:hover { background: rgba(255,255,255,0.18); }
+  .btn-promo-gold { background: rgba(0,194,178,0.15); color: var(--teal); border: 1px solid rgba(0,194,178,0.3); }
+  .btn-promo-gold:hover { background: rgba(0,194,178,0.28); }
+
+  /* ───── TESTIMONIALS ───── */
+  #testimonios {
+    padding: 100px 6vw;
+    background: linear-gradient(180deg, #090c0c, #001a18 50%, #090c0c);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px; margin-top: 3rem;
+  }
+
+  .testimonial-card {
+    background: var(--gray); border-radius: 12px; padding: 1.6rem;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: border-color 0.3s;
+  }
+  .testimonial-card:hover { border-color: rgba(0,194,178,0.35); }
+
+  .t-stars { color: #f5a623; font-size: 1rem; margin-bottom: 0.8rem; letter-spacing: 2px; }
+  .t-text { color: #ccc; font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.2rem; font-style: italic; }
+  .t-author { display: flex; align-items: center; gap: 12px; }
+  .t-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal), var(--teal-light));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem;
+    color: #000; flex-shrink: 0;
+  }
+  .t-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; }
+  .t-location { font-size: 0.78rem; color: var(--gray-light); }
+
+  /* ───── CTA FINAL ───── */
+  #contacto {
+    padding: 100px 6vw;
+    background: var(--black);
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+
+  .cta-glow {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: 600px; height: 400px;
+    background: radial-gradient(ellipse, rgba(0,194,178,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-content { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+
+  .cta-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 7vw, 6rem); line-height: 0.95;
+    margin-bottom: 1.2rem;
+  }
+  .cta-title .fire { color: var(--teal); }
+
+  .cta-sub { color: var(--gray-light); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2.5rem; }
+
+  .btn-wa-final {
+    display: inline-flex; align-items: center; gap: 14px;
+    background: var(--wa-green); color: #fff;
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem;
+    letter-spacing: 0.06em;
+    padding: 20px 50px; border-radius: 8px; cursor: pointer;
+    text-decoration: none; transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 30px rgba(37,211,102,0.3);
+    animation: wa-pulse 3s ease-in-out infinite;
+  }
+  @keyframes wa-pulse { 0%,100%{box-shadow:0 4px 30px rgba(37,211,102,0.3)} 50%{box-shadow:0 4px 50px rgba(37,211,102,0.6)} }
+  .btn-wa-final:hover { background: var(--wa-dark); transform: scale(1.05); }
+  .btn-wa-final svg { width:32px; height:32px; }
+
+  .cta-urgency {
+    margin-top: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 6px;
+    color: var(--teal); font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    animation: pulse-badge 2s infinite;
+  }
+
+  /* ───── FOOTER ───── */
+  footer {
+    background: #050505; border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 3rem 6vw 2rem;
+  }
+
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem; margin-bottom: 2.5rem;
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif; font-size: 2rem;
+    color: var(--white); text-decoration: none; letter-spacing: 0.06em;
+    display: block; margin-bottom: 0.8rem;
+  }
+  .footer-logo span { color: var(--teal); }
+  .footer-desc { color: var(--gray-light); font-size: 0.88rem; line-height: 1.65; max-width: 280px; }
+
+  .footer-heading {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem;
+    font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 1rem;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-links a { color: var(--gray-light); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--white); }
+
+  .social-links { display: flex; gap: 10px; margin-top: 1rem; }
+  .social-btn {
+    width: 38px; height: 38px; border-radius: 8px;
+    background: var(--gray-mid); border: 1px solid rgba(255,255,255,0.08);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gray-light); text-decoration: none; font-size: 1rem;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .social-btn:hover { background: var(--teal); color: #000; border-color: var(--teal); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 1.5rem;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: gap;
+  }
+  .footer-copy { color: var(--gray-light); font-size: 0.82rem; }
+  .footer-wa {
+    display: flex; align-items: center; gap: 6px;
+    background: rgba(37,211,102,0.12); border: 1px solid rgba(37,211,102,0.25);
+    color: var(--wa-green); font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 8px 16px; border-radius: 6px; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .footer-wa:hover { background: rgba(37,211,102,0.2); }
+
+  /* ───── FLOATING WA BUTTON ───── */
+  .float-wa {
+    position: fixed; bottom: 24px; right: 24px; z-index: 999;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: var(--wa-green); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; box-shadow: 0 4px 24px rgba(37,211,102,0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: float-bounce 3s ease-in-out infinite;
+  }
+  @keyframes float-bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+  .float-wa:hover { transform: scale(1.1); box-shadow: 0 6px 32px rgba(37,211,102,0.7); }
+  .float-wa svg { width:30px; height:30px; }
+  .float-wa-tooltip {
+    position: absolute; right: 74px; background: #111;
+    color: var(--white); white-space: nowrap;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 600;
+    padding: 8px 14px; border-radius: 6px; pointer-events: none;
+    opacity: 0; transition: opacity 0.2s;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .float-wa:hover .float-wa-tooltip { opacity: 1; }
+
+  /* ───── MOBILE NAV ───── */
+  .mobile-nav {
+    position: fixed; top: 66px; left: 0; right: 0;
+    background: rgba(10,10,10,0.98); backdrop-filter: blur(16px);
+    padding: 1.5rem 6vw; z-index: 999;
+    display: none; flex-direction: column; gap: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.4rem 0; }
+
+  /* ───── RESPONSIVE ───── */
+  @media (max-width: 900px) {
+    nav { display: none; }
+    .hamburger { display: flex; }
+    #hero { grid-template-columns: 1fr; text-align: center; padding-top: 120px; }
+    .hero-ctas { justify-content: center; }
+    .hero-stats { justify-content: center; }
+    .hero-sub { margin: 0 auto 2rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-desc { max-width: 100%; }
+    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+    .btn-wa-header span { display: none; }
+  }
+  @media (max-width: 600px) {
+    .products-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .product-img-wrap { height: 160px; }
+    .product-emoji { font-size: 4rem; }
+    .promos-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .benefits-grid { grid-template-columns: 1fr 1fr; }
+  }
+  /* ═══ MOBILE FIRST — OPTIMIZACIONES ═══ */
+  @media (max-width: 480px) {
+    /* Header compacto */
+    header { padding: 0 4vw; height: 58px; }
+    .logo { font-size: 1.45rem; }
+
+    /* Hero */
+    #hero { padding: 80px 5vw 44px; }
+    .hero-title { font-size: clamp(2.2rem, 10vw, 3.2rem); }
+    .hero-badge { font-size: 0.74rem; padding: 5px 11px; }
+    .hero-ctas { flex-direction: column; align-items: stretch; gap: 10px; }
+    .btn-primary, .btn-secondary { justify-content: center; text-align: center; padding: 14px 20px; font-size: 0.95rem; }
+    .hero-stats { gap: 1.2rem; }
+    .stat-num { font-size: 1.7rem; }
+    .stat-label { font-size: 0.68rem; }
+
+    /* Catálogo */
+    #catalogo { padding: 60px 4vw; }
+    .products-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .pc-img-wrap { height: 170px; }
+    .product-info { padding: 0.9rem 0.9rem 1rem; }
+    .product-name { font-size: 1rem; }
+    .pc-thumbs { padding: 5px 8px; gap: 5px; }
+    .pc-thumb { width: 36px; height: 36px; }
+    .size-chip { font-size: 0.65rem; padding: 2px 5px; }
+    .price-current { font-size: 1.45rem; }
+    .btn-wa-product { font-size: 0.72rem; padding: 11px 6px; gap: 5px; letter-spacing: 0.01em; }
+    .btn-wa-product svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .product-badge { font-size: 0.65rem; padding: 3px 7px; }
+
+    /* Secciones */
+    #beneficios, #promociones, #testimonios, #contacto { padding: 56px 4vw; }
+    .benefits-grid { grid-template-columns: 1fr 1fr; }
+    .benefit-item { padding: 1.3rem 1rem; }
+    .benefit-icon { font-size: 1.7rem; }
+    .promos-grid { grid-template-columns: 1fr; gap: 14px; }
+    .testimonials-grid { grid-template-columns: 1fr; gap: 14px; }
+
+    /* Botón cargar más */
+    .btn-load-more { font-size: 0.9rem; padding: 13px 22px; }
+
+    /* CTA */
+    .cta-title { font-size: clamp(2.2rem, 9vw, 3.5rem); }
+    .btn-wa-final { font-size: 1.15rem; padding: 16px 24px; gap: 10px; }
+    .btn-wa-final svg { width: 24px; height: 24px; }
+
+    /* Footer */
+    footer { padding: 2.5rem 4vw 1.5rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+
+    /* Float WA button */
+    .float-wa { width: 52px; height: 52px; bottom: 18px; right: 18px; }
+    .float-wa svg { width: 26px; height: 26px; }
+
+    /* Section headers */
+    .section-title { font-size: clamp(1.9rem, 8vw, 3rem); }
+  }
+
+  /* Pantallas muy pequeñas — 1 columna en catálogo */
+  @media (max-width: 340px) {
+    .products-grid { grid-template-columns: 1fr; }
+    .pc-img-wrap { height: 200px; }
+  }
+
+  /* Tablet mejoras */
+  @media (min-width: 481px) and (max-width: 900px) {
+    #hero { padding: 100px 6vw 56px; }
+    .products-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .two-col { grid-template-columns: 1fr 1fr; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- FLOATING WA BUTTON -->
+<a href="https://wa.me/593983447591?text=Hola%2C%20quiero%20ver%20el%20cat%C3%A1logo%20de%20zapatillas" target="_blank" class="float-wa" aria-label="WhatsApp">
+  <span class="float-wa-tooltip">¡Escríbenos ya!</span>
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.559 4.14 1.535 5.874L0 24l6.336-1.513A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.017-1.37l-.36-.214-3.727.977.999-3.634-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
+</a>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#hero">Inicio</a>
+  <a href="#catalogo">Catálogo</a>
+  <a href="#promociones">Promociones</a>
+  <a href="#contacto">Contacto</a>
+  <a href="https://wa.me/593983447591?text=Hola%2C%20quiero%20ver%20el%20cat%C3%A1logo%20de%20zapatillas" target="_blank" class="btn-wa-header" style="width:fit-content">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.559 4.14 1.535 5.874L0 24l6.336-1.513A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.017-1.37l-.36-.214-3.727.977.999-3.634-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
+    Comprar por WhatsApp
+  </a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <a href="#hero" class="logo">PUMA <span>FASHION</span></a>
+  <nav>
+    <a href="#hero">Inicio</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#promociones">Promociones</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <a href="https://wa.me/593983447591?text=Hola%2C%20quiero%20ver%20el%20cat%C3%A1logo%20de%20zapatillas" target="_blank" class="btn-wa-header">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.559 4.14 1.535 5.874L0 24l6.336-1.513A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.017-1.37l-.36-.214-3.727.977.999-3.634-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
+    <span>Comprar por WhatsApp</span>
+  </a>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-text">PUMA</div>
+
+  <div class="hero-content">
+    <div class="hero-badge">🔥 Stock Limitado — ¡Corre!</div>
+    <h1 class="hero-title">
+      CALZADO ORIGINAL<br>
+      <span class="accent">QUE MARCA</span>
+      TU ESTILO
+    </h1>
+    <p class="hero-sub">
+      <strong>Puma · Nike · Adidas · New Balance</strong><br>
+      Stock disponible | Envíos a todo Ecuador | Pago contra entrega
+    </p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/593983447591?text=Hola%2C%20quiero%20ver%20el%20cat%C3%A1logo%20de%20zapatillas" target="_blank" class="btn-primary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.559 4.14 1.535 5.874L0 24l6.336-1.513A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.017-1.37l-.36-.214-3.727.977.999-3.634-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
+        Comprar ahora
+      </a>
+      <a href="#catalogo" class="btn-secondary">Ver catálogo →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Clientes felices</div></div>
+      <div class="stat"><div class="stat-num">24h</div><div class="stat-label">Entrega Guayaquil</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Original garantizado</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="catalogo">
+  <div class="section-header">
+    <span class="section-eyebrow">Nuestro catálogo</span>
+    <h2 class="section-title">ZAPATILLAS EN STOCK 🔥</h2>
+    <p class="section-sub">200 modelos originales disponibles — ¡Pide el tuyo hoy!</p>
+  </div>
+  <div class="products-grid" id="productsGrid"></div>
+  <div style="text-align:center;margin-top:3rem;" id="loadMoreWrap">
+    <button onclick="loadMore()" id="btnLoadMore" class="btn-load-more">
+      <span id="btnLoadMoreText">VER MÁS PRODUCTOS (190 restantes) ↓</span>
+    </button>
+  </div>
+</section>
+
+<script>
+const AP=[['VALENTINO','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/desf.jpg?v=1770413599", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/kk.jpg?v=1770413599", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-28at21.26.28.jpg?v=1770413599", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-28at21.26.28.jpegffffffff.jpg?v=1770413599"],["38", "39", "40"]],['PALLADIUM','PUMAFASHION',75.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/k.jpg?v=1770413844", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/kkkk.jpg?v=1770413844", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-28at21.1.jpg?v=1770413844", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-28at21.10.23.jpg?v=1770413843"],["38", "39", "41.5"]],['NEW BALANCE','PUMAFASHION',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/DDDDDDDDDDDDDDD.jpg?v=1770414003", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/DDD.jpg?v=1770414027", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/DDDDD.jpg?v=1770414027", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/DDDDDDDDD.jpg?v=1770414027"],["42", "42.5", "40.5"]],['NEW BALANCE','PUMAFASHION',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/L.jpg?v=1770414155", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/LLLL.jpg?v=1770414154", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/LLLLL.jpg?v=1770414155"],["44.5", "44", "42.5"]],['NEW BALANCE','PUMAFASHION',60.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/1CC582686-negro.jpg?v=1770414871", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2CC582686-negro.jpg?v=1770414872", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/3CC582686-negro.jpg?v=1770414871", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/582686-negro.jpg?v=1770414872"],["35", "36"]],['NEW BALANCE','PUMAFASHION',60.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/N.jpg?v=1770415050", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/NN.jpg?v=1770415050", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/NNN.jpg?v=1770415050", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/NNNN.jpg?v=1770415050"],["36.5"]],['NEW BALANCE','PUMAFASHION',65.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/P.jpg?v=1770415182", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/PP.jpg?v=1770415182", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/PPP.jpg?v=1770415182"],["44.5", "43", "44"]],['NEW BALANCE','PUMAFASHION',65.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/U.jpg?v=1770415278", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/UU.jpg?v=1770415278", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/UUU.jpg?v=1770415278", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/UUUU.jpg?v=1770415278"],["42.5"]],['NEW BALANCE','PUMAFASHION',65.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/T.jpg?v=1770415417", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/TT.jpg?v=1770415417", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/TTT.jpg?v=1770415416", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/TTTT.jpg?v=1770415417"],["37.5", "37"]],['BRUNELLO CUCINELLI','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/R.jpg?v=1770415957", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/RR.jpg?v=1770415957", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/RRR.jpg?v=1770415957"],["38", "39", "40", "41"]],['And1 Silky Smooth Basketball','PUMAFASHION',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Y.jpg?v=1770416095", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/YY.jpg?v=1770416095", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/YYY.jpg?v=1770416096", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/YYYY.jpg?v=1770416095"],["44", "42.5", "43"]],['CONVERSE UNISEX CHUCK 70 RUSH BLUE','PUMAFASHION',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Q.jpg?v=1770417963", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/QQ.jpg?v=1770417963", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/QQQ.jpg?v=1770417963", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/QQQQ.jpg?v=1770417963"],["37", "36.5", "39"]],['CONVERSE ALL STAR CHUCK','PUMAFASHION',65.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/149513C1.webp?v=1770418137", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/149513C2.webp?v=1770418137", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/149513C3.webp?v=1770418137", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/149513C4.webp?v=1770418137"],["37"]],['CONVERSE TENIS','PUMAFASHION',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/A.webp?v=1770418236", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/AA.webp?v=1770418236", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/AAA.webp?v=1770418236", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/AAAA.webp?v=1770418236"],["37"]],['CONVERSE SHOES CHUCK TAYLOR','PUMAFASHION',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/140028C4_jpg.jpg?v=1770418520", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/I.jpg?v=1770418520", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/II.jpg?v=1770418520", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/IIII.jpg?v=1770418520"],["37", "37.5", "41", "36.5", "40"]],['CONVERSE  NEW GENUINE','PUMAFASHION',60.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/RRR.webp?v=1770418629", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/RRRR.webp?v=1770418629", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/RR.webp?v=1770418629", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/R.webp?v=1770418629"],["36"]],['CONVERSE CHUCK TAYLOR','PUMAFASHION',60.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/FFFF.jpg?v=1770418825", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/F.jpg?v=1770418825", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/FF.jpg?v=1770418825", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/FFF.jpg?v=1770418825"],["41", "40"]],['CONVERSE STAR PLAYER','PUMAFASHION',65.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/139888C1_jpg.jpg?v=1770418892"],["41", "40", "41.5"]],['CONVERSE  BOTY CHUTCK AYLON','PUMAFASHION',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Z.jpg?v=1770418994", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/ZZZ.jpg?v=1770419002", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/ZZZZ.jpg?v=1770419002", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/ZZ.jpg?v=1770419002"],["40", "41", "36.5", "37"]],['CONVERSE CHINATOWN','PUMAFASHION',60.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/771256C1.webp?v=1770419070", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/771256C2.webp?v=1770419070", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/771256C3.webp?v=1770419070", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/771256C4.webp?v=1770419070"],["25", "22", "24", "21"]],['SKECHERS SNEAKERS CORDOVA CLASSIC','PUMAFASHION',65.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/SS.jpg?v=1770419160", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/SSSS.jpg?v=1770419160", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-28at20.01.33.jpg?v=1770419160", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-28at20.01.34.jpg?v=1770419160"],["39", "38.5", "39.5", "37.5"]],['SKECHERS GO RUN MAX CUSHIONING','PUMAFASHION',60.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-28at19.57.02.jpg?v=1770419260"],["37", "36", "35", "34", "28.5"]],['SKECHERS X SNOOP DOGG','PUMAFASHION',60.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/CCC.jpg?v=1770419371", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/C.jpg?v=1770419371", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/CC.jpg?v=1770419371", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/CCCC.jpg?v=1770419355"],["39"]],['SKECHERS DIGHTON KISTER WOMEN','PUMAFASHION',60.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/V.jpg?v=1770419445", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/VV.jpg?v=1770419445"],["35.5", "39", "38.5", "37", "38", "37.5"]],['SKECHERS  TENIS','PUMAFASHION',60.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/D_NQ_NP_2X_908856-MLM77090661590_062024-F-tenis-skechers-originales-mod-319038lwpr-max-cush-elite.webp?v=1770326979", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/D_NQ_NP_2X_850397-MLM77303189381_062024-F-tenis-skechers-originales-mod-319038lwpr-max-cush-elite.webp?v=1770326979", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/D_NQ_NP_2X_962837-MLM77090976874_062024-F-tenis-skechers-originales-mod-319038lwpr-max-cush-elite.webp?v=1770326979"],["32", "34", "35", "33", "36", "31"]],['ADIDAS TENIS CORERACER','PUMAFASHION',65.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Zapatillas_Coreracer_Azul_FX3594_04_standard.avif?v=1770326832", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Zapatillas_Coreracer_Azul_FX3594_01_standard.avif?v=1770326832", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Zapatillas_Coreracer_Azul_FX3594_02_standard_hover.avif?v=1770326833", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Zapatillas_Coreracer_Azul_FX3594_03_standard.avif?v=1770326832"],["43.5", "45.5", "44.5", "40", "42.5", "40.5", "42", "44"]],['ADIDAS TENIS CORERACER','PUMAFASHION',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Tenis_Coreracer_Negro_FX3593_01_standard_b4e5370a-1b0c-4d47-a9b6-7a221f6aa96e.avif?v=1770326870", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Tenis_Coreracer_Negro_FX3593_02_standard_hover_df7370c6-aea3-4fdc-a8b6-c312d88a9664.avif?v=1770326871", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Tenis_Coreracer_Negro_FX3593_03_standard_411db512-f898-4dec-9d39-d52f06d760d8.avif?v=1770326870", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Tenis_Coreracer_Negro_FX3593_04_standard_1d40c16d-dc09-4180-afff-1ecc48c448f4.avif?v=1770326870"],["43.5", "44", "44.5", "41.5", "40.5", "42", "42.5", "39.5"]],['ADIDAS TENIS DURAMO RC','PUMAFASHION',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/ID2703_01_standard.avif?v=1770326479", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/ID2703_04_standard.avif?v=1770326479", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/ID2703_02_standard_hover_hover.avif?v=1770326479", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/ID2703_03_standard.avif?v=1770326479"],["40", "40.5", "41.5", "42", "42.5", "44", "44.5", "45.5"]],['NIKE AIR JORDAN 1LOW SE CRAFT','PUMAFASHION',125.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_6ea78c1c-ec81-489f-b811-77d9653dac3c.webp?v=1770262933", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_1_42110a0f-ea92-4af6-b33e-c5436ed8fe4f.webp?v=1770262933", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_2_fc903497-82ff-40b2-8425-604c70f6ddfa.webp?v=1770262933", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_3_7cf0bcdf-df40-4017-a082-6c37d1fbf97f.webp?v=1770262933", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_4_156795c1-514e-4e34-b81f-80b406493206.webp?v=1770262933", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_5.webp?v=1770262933"],["43", "44"]],['NIKE JORDAN 1 RETRO HIGH OG','PUMAFASHION',130.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/m_67f14c12001542cc7af84165.jpg?v=1770263018", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/m_wp_67f14c13d8024c0771fbeac9.webp?v=1770263018", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/m_wp_67f14c13f59cc486d6b629e7.webp?v=1770263018"],["36.5"]],['NIKE SB ZOOM BLAZER MI','PUMAFASHION',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-sb-zoom-blazer-mid-baroque-brown-adobe-baroque-brown-white-fd0731-200_0000_cat.jpg?v=1770263084", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-sb-zoom-blazer-mid-baroque-brown-adobe-baroque-brown-white-fd0731-200_0001_1.jpg?v=1770263084", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-sb-zoom-blazer-mid-baroque-brown-adobe-baroque-brown-white-fd0731-200_0002_2.jpg?v=1770263084"],["42.5"]],['NIKE JORDAN JUMPMAN PRO','PUMAFASHION',120.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Jordan-FB9978-161-M246.webp?v=1770263136", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Jordan-FB9978-161-M249.webp?v=1770263136", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Jordan-FB9978-161-M248.webp?v=1770263136", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Jordan-FB9978-161-M250.webp?v=1770263136"],["44.5"]],['NIKE ATTACK QS SP','PUMAFASHION',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/zapatillas-nike-mac-attack-light-smoke-grey-fb8938-001-0.webp?v=1770263197", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/zapatillas-nike-mac-attack-light-smoke-grey-fb8938-001-2.webp?v=1770263197", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/zapatillas-nike-mac-attack-light-smoke-grey-fb8938-001-5.webp?v=1770263196"],["36", "38.5"]],['NIKE W NIKE ZOOM SUPERREP 4 NN','PUMAFASHION',125.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/10156474138654.jpg?v=1770263301", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/10156476497950.jpg?v=1770263301", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/10156474925086.jpg?v=1770263301", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/10156474138654_1.jpg?v=1770263301"],["39", "40", "42"]],['NIKE YOUTH AIR','PUMAFASHION',105.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/AIR-JORDAN-7-AFROBEATS-DZ4729-200-8.webp?v=1770263494", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/AIR-JORDAN-7-AFROBEATS-DZ4729-200-7.webp?v=1770263494", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/AIR-JORDAN-7-AFROBEATS-DZ4729-200-2.webp?v=1770263465", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/AIR-JORDAN-7-AFROBEATS-DZ4729-200-1.webp?v=1770263465", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/AIR-JORDAN-7-AFROBEATS-DZ4729-200-3.webp?v=1770263465", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/AIR-JORDAN-7-AFROBEATS-DZ4729-200-4.webp?v=1770263465"],["38"]],['NIKE ACG AIR MOC MOSS','PUMAFASHION',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-acg-moc-moss-black-moss-lt-orewood-brn-dz3407-300-footwear_sneaker-packshots-30.jpg?v=1770263552", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-acg-moc-moss-black-moss-lt-orewood-brn-dz3407-300-footwear_sneaker-packshots-60.jpg?v=1770263552", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-acg-moc-moss-black-moss-lt-orewood-brn-dz3407-300-footwear_sneaker-packshots-90.jpg?v=1770263552", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-acg-moc-moss-black-moss-lt-orewood-brn-dz3407-300-footwear_sneaker-packshots-120.jpg?v=1770263552", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-acg-moc-moss-black-moss-lt-orewood-brn-dz3407-300-footwear_sneaker-packshots-150.jpg?v=1770263552", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-acg-moc-moss-black-moss-lt-orewood-brn-dz3407-300-footwear_sneaker-packshots-0.jpg?v=1770263554"],["41"]],['NIKE KD 15 TB GAME','PUMAFASHION',105.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_ac634517-ad4f-40cc-a479-c27cd5d842ba.webp?v=1770263638", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_1_4698fab0-afda-446f-8ab8-e2e5c39f59df.webp?v=1770263637"],["43"]],['NIKE KYRIE INFINITY TB PROMO','PUMAFASHION',105.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/main-square_1920x_699ad382-3e20-4f55-ae4c-13b0f11a74f3.webp?v=1770263804", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2_1920x_62185c84-6095-407d-abd2-44ae9a350f2c.webp?v=1770263804", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/3_1920x_2b5179b1-7ce3-42ad-9ffc-d06b502b5523.webp?v=1770263804"],["40", "44"]],['NIKE SB CHRON 2 CANVAS','PUMAFASHION',150.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/NIKE00332-1.jpg?v=1770263888", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/NIKE00332-0002-1.jpg?v=1770263888", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/NIKE00332-0001-1.jpg?v=1770263877"],["43"]],['NIKE JORDAN AIR JORDAN 2 RETRO','PUMAFASHION',115.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Screenshot_2023.08.11_15.28.43.754-768x705_deeba034-c0f8-49c6-9b20-0b41706d0cbd.png?v=1770306893", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Screenshot_2023.08.11_15.28.46.237-768x681_a30e9247-907b-46fd-a7cd-ad84fa816d3f.png?v=1770306893", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Screenshot_2023.08.11_15.28.43.754-768x705_1_01400767-a85d-46f6-b81e-24ba2003da94.png?v=1770306893"],["38.5"]],['NIKE W NIKE PHOENIX WAFFLE','PUMAFASHION',85.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/FD2196-100_1.jpg?v=1770307045", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/FD2196-100_2.jpg?v=1770307045", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/FD2196-100_3.jpg?v=1770307045"],["38", "38.5", "39"]],['NIKE JORDAN BIG KID','PUMAFASHION',125.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/air-jordan-1-mid-gs-tablecloth-dx2460-601-3.webp?v=1770307192", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/air-jordan-1-mid-gs-tablecloth-dx2460-601-0.webp?v=1770307192", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/air-jordan-1-mid-gs-tablecloth-dx2460-6017.webp?v=1770307192"],["36.5"]],['NIKE JORDAN STADIUM 90','PUMAFASHION',105.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/4_cd4e52c9-f69f-4924-ab7e-880c1228988f.webp?v=1770307144", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/main-square_b114beb4-a887-4963-8536-1719f9b4c74f.webp?v=1770307144", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2_e093f988-b99c-4578-a92d-e15dae38a383.webp?v=1770307144"],["40.5", "41", "42", "42.5", "43"]],['NIKE KYRIE 8 ASW','PUMAFASHION',110.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_e1c37717-2602-4cd9-985f-b58e2b24e707.webp?v=1770307382", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_1_bc7195d6-2531-46f7-bb74-0b3d103ee882.webp?v=1770307382", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_2_32d19a41-4651-46fc-a161-afe519cc2876.webp?v=1770307383"],["44.5", "40", "41"]],['NIKE OFFLINE 3.0 PREMIUM','PUMAFASHION',65.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/856b6ccc-1c38-4831-9b43-10cdf33fb842.avif?v=1770307432", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-offline-3-0-premium-mule-in-grey-dr0290-001_alt_1.avif?v=1770307432", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-offline-3-0-premium-mule-in-grey-dr0290-001_alt_2.avif?v=1770307432"],["44"]],['JORDAN HEX SLIDE','PUMAFASHION',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/main-square_6d185d8e-4ce3-44cd-98b9-843ef86674b7.webp?v=1770308054", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/4_58c6b44e-7583-40b0-816e-8369c1e75647.webp?v=1770308054", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2_0fb409ef-2387-44b1-bc5c-baaee391f8fb.webp?v=1770308054", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/3_26997984-b45c-48c9-9a20-eef140744cd7.webp?v=1770308054"],["36.5"]],['JORDAN HEX SLIDE PISTACHIO','PUMAFASHION',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/cd921688d979367ace64f7783832fa15.jpg?v=1770308133", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/1e8a1ec75d20574c1df8837468cb1991.jpg?v=1770308133", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/d55e124550b41f9cbbfb419539893c00.jpg?v=1770308133"],["40.5"]],['NIKE JORDAN STAY LYAL 3','PUMAFASHION',130.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196969271039_4_20240129120000-mrtPeru.webp?v=1770308333", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196969271039_5_20240129120000-mrtPeru.webp?v=1770308333", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196969271039_6_20240129120000-mrtPeru.webp?v=1770308333", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196969271039_7_20240129120000-mrtPeru.webp?v=1770308333"],["40", "40.5", "41", "42", "42.5", "43"]],['NIKE BLAZER MID PRO CLUB','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at7.05.02PM.jpg?v=1770308686", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at7.05.02PM_1.jpg?v=1770308686"],["42.5", "44.5"]],['NIKE JORDAN SERIES','PUMAFASHION',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/9536879394846.jpg?v=1770308766", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/9536883327006.jpg?v=1770308766", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/9593845547038.jpg?v=1770308766"],["37.5", "35.5", "36.5"]],['NIKE AIR MAX SYSTM','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/DM9538-102-attxfjVQOGEsXKTfp-0.webp?v=1770308825", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/DM9538-102-attNkStBsFmzbAWrk-1.webp?v=1770308824", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/DM9538-102-att7g5zQWFAMDlT7i-3.webp?v=1770308824"],["38", "39"]],['NIKE SB BLAZER COURT MID','PUMAFASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_f56343c3-7725-4e19-8e13-e78063fafd80.webp?v=1770308996", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_1_e7f2d941-b874-464d-bae7-33fbd77fd2c6.webp?v=1770308995", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_2_fbb3ac41-b1b9-4116-8816-d888ffc7f83a.webp?v=1770308996"],["45", "44", "40", "43"]],['NIKE JORDAN MA2 AURA','PUMAFASHION',125.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Capturadepantalla2026-02-05113233.png?v=1770309225", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Capturadepantalla2026-02-05113303.png?v=1770309225", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Capturadepantalla2026-02-05113316.png?v=1770309225", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Capturadepantalla2026-02-05113211.png?v=1770309225"],["40", "40.5", "41", "42", "42.5"]],['NIKE W NIKE AIR MAX SYSTM','PUMAFASHION',115.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/full_image-2026324178810.jpg?v=1770310036", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/image1-2026324178810.jpg?v=1770310036"],["38", "38.5", "39"]],['NIKE GAMMA FORCE','PUMAFASHION',110.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196604405164_2-20240903120000-mrtChile.webp?v=1770310304", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196604405164_1-20240903120000-mrtChile.webp?v=1770310304", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196604405164_4-20240903120000-mrtChile.webp?v=1770310304", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196604405164_3-20240903120000-mrtChile.webp?v=1770310304", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196604405164_5-20240903120000-mrtChile.webp?v=1770310304"],["38", "39", "38.5"]],['NIKE WMNS AIR JORDAN 2 RETRO','PUMAFASHION',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/main-square_427fb06a-d177-450c-817e-9dfaa54e41a7.webp?v=1770310825", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/4_e63b9eee-59b1-44ff-a491-735e8f2eed99.webp?v=1770310825"],["38", "40", "41", "43"]],['NIKE W NIKE COURT VISION LO','PUMAFASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/main-square_569fef6b-fb41-4b06-bce2-507d8348025a.webp?v=1770311058", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2_8f9354e9-9fca-4d7a-a744-22ea757a3827.webp?v=1770311058", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/4_804702e4-7d8b-4e8e-965e-f72adf264a0d.webp?v=1770311058", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/3_ba797bb3-19aa-429d-b903-53127bd5d4e5.webp?v=1770311058"],["36", "37.5", "38.5"]],['NIKE W AIR JORDAN 1 ZM AIR','PUMAFASHION',130.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Air-Jordan-1-Zoom-CMFT-2-Light-Iron-Ore-DV1305-001-01-1.jpg?v=1770311110", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Air-Jordan-1-Zoom-CMFT-2-Light-Iron-Ore-DV1305-001-02-1.jpg?v=1770311110", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Air-Jordan-1-Zoom-CMFT-2-Light-Iron-Ore-DV1305-001-03-1.jpg?v=1770311110", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Air-Jordan-1-Zoom-CMFT-2-Light-Iron-Ore-DV1305-001-04-1.jpg?v=1770311110"],["37.5", "38.5", "40.5"]],['NIKE JORDAN LUKA 1 EASTER','PUMAFASHION',120.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Jordan-Luka-1-Easter-DN1772-305-01.jpg?v=1770311162", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Jordan-Luka-1-Easter-DN1772-305-02.jpg?v=1770311162", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Jordan-Luka-1-Easter-DN1772-305-03.jpg?v=1770311162", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Jordan-Luka-1-Easter-DN1772-305-04.jpg?v=1770311163"],["41"]],['NIKE JORDAN AIR 200E SUMMIT','PUMAFASHION',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/DM9677-160_3424e936-f008-4e64-8984-0dc0bf373a00.jpg?v=1770311205", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/1_13_56c75543-2319-488b-b661-a631feced5ce.webp?v=1770311205", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/dm9677-160whitesku2_d1203165-47a0-44f9-b783-84bd0b21f6c7.webp?v=1770311205"],["37.5", "36"]],['NIKE KYRIE 8 GO','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/main-square_750x_66a383c5-9b5d-40b0-8b5f-002cd477200f.webp?v=1770311265", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2_1920x_fb6db61d-3dcc-4a4e-a452-4bae7297a3da.webp?v=1770311265", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/4_1920x_55dd3e9e-2429-4d18-82d4-3d78699670d9.webp?v=1770311265", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/3_1920x_79da098e-863e-45bd-9a62-c015d6d7d9e8.webp?v=1770311265"],["39", "40", "38.5", "42", "42.5", "36.5", "37.5"]],['NIKE AIRE ZOOM ARCADIA 2','PUMAFASHION',115.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-air-zoom-arcadia-2-barely-grape-metallic-copper-dm8491-500_1.jpg?v=1770311766", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_96776b8f-f91e-442a-985d-503d79ce89b0.webp?v=1770311766", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_1_e9cf980b-cc20-4dbc-829a-8a32cf3ba6e3.webp?v=1770311766", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_2_7ade8d72-8877-47d3-bd15-abc9e756ec27.webp?v=1770311766"],["38.5", "37.5"]],['NIKE M NIKE MC TRAINER 2','PUMAFASHION',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196968968565_1_20240207-mrtPeru.webp?v=1770313024", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196968968565_2_20240207-mrtPeru.webp?v=1770313024", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196968968565_3_20240207-mrtPeru.webp?v=1770313024", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196968968565_4_20240207-mrtPeru.webp?v=1770313024", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196968968565_5_20240207-mrtPeru.webp?v=1770313024"],["42", "42.5", "43"]],['NIKE MC TRAINER 2','PUMAFASHION',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/9807106113566.jpg?v=1770313195", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/9807102967838.jpg?v=1770313195", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/9807102181406.jpg?v=1770313195", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/9807103754270.jpg?v=1770313195"],["43", "42", "42.5"]],['NIKE AIR TRAINER 1','PUMAFASHION',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.12.13PM.jpg?v=1770313318", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.12.13PM_1.jpg?v=1770313318"],["40.5"]],['NIKE COURT BOROUGH MID2','PUMAFASHION',105.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/main-square_750x_5cb2893e-8eee-403e-be32-b7850960dd47.webp?v=1770314229", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/3_1920x_0d08b3d6-46ac-451f-a6e2-ff46402e6630.webp?v=1770314229", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/5_1920x_aea26170-33e4-453f-98fd-ddd0edf26081.webp?v=1770314229"],["37.5", "38", "38.5", "39", "40"]],['NIKE FLEX RUNNER 2','PUMAFASHION',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2027311919133-2.jpg?v=1770314149", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2027311919133-1.jpg?v=1770314149", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2027311919133-4.jpg?v=1770314149", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2027311919133-3.jpg?v=1770314142"],["35.5", "38.5"]],['NIKE KYRIE 8','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-kyrie-8-university-dj6017-100.jpg?v=1770314071"],["44.5", "44", "41", "40"]],['NIKE BUY MERCURIAL SUPERFLY 9','PUMAFASHION',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/c3b744edd160.webp?v=1770314013", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/164685748c9f.webp?v=1770314013", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/85b598fae69e.webp?v=1770314014", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/c3dc824b78c0.webp?v=1770314014"],["45"]],['NIKE DEFY ALL DAY','PUMAFASHION',85.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/dj1196_101-nike-avalyne-vyrams-stilius-mada-sprotui-treniruotems-laisvalaikiui-sportsman.lt_3.webp?v=1770313949", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/dj1196_101-nike-avalyne-vyrams-stilius-mada-sprotui-treniruotems-laisvalaikiui-sportsman.lt_4.webp?v=1770313955", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/dj1196_101-nike-avalyne-vyrams-stilius-mada-sportsman.lt.webp?v=1770313955", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/dj1196_101-nike-avalyne-vyrams-stilius-mada-sprotui-treniruotems-laisvalaikiui-sportsman.lt_1.webp?v=1770313955", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/dj1196_101-nike-avalyne-vyrams-stilius-mada-sprotui-treniruotems-laisvalaikiui-sportsman.lt_6.webp?v=1770313955"],["44.5"]],['NIKE WAFFLE DEBUT','PUMAFASHION',85.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/imageUrl_1.webp?v=1770313864", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/imageUrl_3.webp?v=1770313864", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/imageUrl_4.webp?v=1770313864"],["45"]],['NIKE COURT VISION LO NN','PUMAFASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/NIKE00330-600x600.jpg?v=1770313741", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/NIKE00330-0002-600x600.jpg?v=1770313741", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/NIKE00330-0001.jpg?v=1770313741"],["43", "42", "42.5"]],['NIKE AIR WINFLO 9','PUMAFASHION',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/195376-1200-1200.webp?v=1770313807", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/195374-1600-1600.webp?v=1770313807", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/195375-1200-1200.webp?v=1770313807", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/195377-1200-1200.webp?v=1770313807", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/195378-1200-1200.webp?v=1770313807"],["38.5"]],['NIKE REVOLUTION 6 NN','PUMAFASHION',65.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2_3.webp?v=1770313687", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/4_3.webp?v=1770313687", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/1_4.webp?v=1770313687", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/3_4.webp?v=1770313687"],["35.5", "38"]],['NIKE REVOLUTION 6','PUMAFASHION',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-revolution-6-smoke-strike-s-size-5-dd1096-009.jpg?v=1770313618", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-revolution-6-mlodziezowe-buty-lifestyle-szary-dd1096-009.jpg?v=1770313619", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-revolution-6-mlodziezowe-buty-lifestyle-szary-dd1096-009_4.jpg?v=1770313618", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-revolution-6-mlodziezowe-buty-lifestyle-szary-dd1096-009_5.jpg?v=1770313618", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-revolution-6-mlodziezowe-buty-lifestyle-szary-dd1096-009_6.jpg?v=1770313619", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-revolution-6-mlodziezowe-buty-lifestyle-szary-dd1096-009_8.jpg?v=1770313618"],["36.5"]],['NIKE RENEW RUM 3','PUMAFASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/fbd7544e-ea28-4858-8048-679212bb76f1.dc48d5f47d901b57cd8df0498a76fb96.webp?v=1770313528", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/c2f4c22e-7307-4457-bf0d-deab73b809b2.2f3d31c2bdb58dfc7d94da4395299848.webp?v=1770313528", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/9aa6d32a-8339-4701-ae43-a46d0ed042ba.fce3db72f60e0344dea02b6fb07203d7.webp?v=1770313528", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/c36cece1-2c28-453d-85b2-f9188264d447.50b9edd4dcd8c1f2853d06a8c172d5be.webp?v=1770313528"],["45", "40", "40.5"]],['NIKE CITY REP TR','PUMAFASHION',85.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/341832-1200-auto.webp?v=1770313468", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/343508-1200-auto.webp?v=1770313467", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/344348-1200-auto.webp?v=1770313467", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/344841-1200-auto.webp?v=1770313468"],["42", "42.5", "43"]],['NIKE AIR MAX 90','PUMAFASHION',75.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/ZM-Nike-City-Rep-TR-DA1352-005-01_a9d8547b-b7f7-4931-9d5c-26df7c6e14be.jpg?v=1770313419", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/ZM-Nike-City-Rep-TR-DA1352-005-02_876d725e-32e0-4119-8391-e2f3e3512622.jpg?v=1770313419", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/ZM-Nike-City-Rep-TR-DA1352-005-03_43bd8ec8-f812-4d0c-bc6b-49be12d810c9.jpg?v=1770313419"],["44.5", "44"]],['NIKE AIR MAX SC GS','PUMAFASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/main-square_9f4dd7cc-241c-4f98-862d-6c39926978b8.webp?v=1770314296", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/3_f07a3c8f-efd0-4969-b7de-69f6dbfc530e.webp?v=1770314296", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2_c6e319a1-3273-4e5d-9c10-fad8f5fc4a08.webp?v=1770314290", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/4_0da9fc66-36ae-4cc6-bd3e-4d1994a88075.webp?v=1770314290"],["38.5"]],['NIKE JORDAN MAX AURA 3','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/191897-1200-auto.webp?v=1770314366", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/191895-1200-auto.webp?v=1770314366", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/191896-1200-auto.webp?v=1770314366", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/191898-1200-auto.webp?v=1770314366"],["40.5", "40"]],['NIKE JORDAN POINT LANE','PUMAFASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/jordan-point-lane-white-black-lightning-yellow-cz4166-100-5.webp?v=1770314950", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/jordan-point-lane-white-black-lightning-yellow-cz4166-100-1.webp?v=1770314950", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/jordan-point-lane-white-black-lightning-yellow-cz4166-100-8.webp?v=1770314950", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/jordan-point-lane-white-black-lightning-yellow-cz4166-100-6.webp?v=1770314950"],["44.5"]],['NIKE JORDAN MA2','PUMAFASHION',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/main-square_1920x_1404c61c-2cef-4ed1-93ab-832d3195e6f3.webp?v=1770314680", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2_1920x_0e4d6491-a1de-43bd-b679-c3d5dc7bab64.webp?v=1770314680", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/3_1920x_313c7237-ff29-4e34-baa1-92f6771ec437.webp?v=1770314680", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/4_1920x_41449657-cc2a-4da6-94cf-dfdc1f19789c.webp?v=1770314680", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/5_1920x_301b5f74-17c7-4ad5-ae75-2b23ef8c04ba.webp?v=1770314680"],["38.5"]],['NIKE WMNS NIKE AIR MAX SC','PUMAFASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/CW4554-101-PHCFH001-1024x1024.jpg?v=1770314871", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/CW4554-101-PHSRH000-scaled.jpg?v=1770314871", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/CW4554-101-PHCTH001-1024x1024.jpg?v=1770314871", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/CW4554-101-PHSYD002-1024x1024.jpg?v=1770314862"],["38", "38.5", "36.5", "37.51"]],['NIKE RENEW ELEVATE 2','PUMAFASHION',105.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-buty-renew-elevate-ii-cw3406-002-4f5b789f.jpg?v=1770316509", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-buty-renew-elevate-ii-cw3406-002-54a70ed0.jpg?v=1770316509", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-buty-renew-elevate-ii-cw3406-002-96574024.jpg?v=1770316509", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-buty-renew-elevate-ii-cw3406-002-9bc5f83a.jpg?v=1770316509"],["44", "44.5"]],['NIKE WMNS NIKE AIR MAX AP','PUMAFASHION',125.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/main-square_750x_b08bdd28-3fce-4394-a4bd-1ed1517735f1.webp?v=1770316281", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/3_750x_3ab7a5ea-f4fa-4c08-9fe9-06b6942e5819.webp?v=1770316281", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2_750x_729f3897-f94c-4478-a38f-2c318f911833.webp?v=1770316275"],["38", "38.5", "39"]],['NIKE AIR MAX AP','PUMAFASHION',105.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-air-max-ap-meskie-buty-lifestyle-szary-cu4826-006_2.webp?v=1770315834", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-air-max-ap-meskie-buty-lifestyle-szary-cu4826-006.jpg?v=1770315834", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-air-max-ap-meskie-buty-lifestyle-szary-cu4826-006_4.webp?v=1770315811", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-air-max-ap-meskie-buty-lifestyle-szary-cu4826-006_5.jpg?v=1770315811", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/nike-air-max-ap-meskie-buty-lifestyle-szary-cu4826-006_6.jpg?v=1770315811"],["40", "40.5"]],['NIKE MC TRAINER','PUMAFASHION',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/CU3584-456_3a3e580d-4730-4008-8e08-97fca2a65afa.webp?v=1770315736"],["38.5", "36", "37.5"]],['NIKE KYRIE FLYTRAP 4','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/4_ec6da362-168e-4225-b8fc-7bdff57f7690.webp?v=1770315704", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/3_ab317c44-0e66-49f9-998c-7afb77d730f3.webp?v=1770315704", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/5_adcfff07-e300-428b-94b6-70cfc6cd8630.webp?v=1770315704", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/1_35dcd2a2-8ddc-4c77-bd3d-6f044942ca9f.webp?v=1770315704", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2_eef977c2-e511-4459-8a42-d18e9e0b69ae.webp?v=1770315704"],["44.5"]],['NIKE AIR MAX EXCEE','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/9711971762206.jpg?v=1770315584", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/9711974907934.jpg?v=1770315584", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/9711976480798.jpg?v=1770315584", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/9711974121502.jpg?v=1770315584"],["40"]],['NIKE AIR MAX EXCEE SPORTSWEAR','PUMAFASHION',110.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2025298317546-3.jpg?v=1770315506", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2025298317546-4.jpg?v=1770315507", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2025298317546-5.jpg?v=1770315507", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2025298317546-2.jpg?v=1770315507"],["40"]],['NIKE STAR RUNNER SD','PUMAFASHION',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/150339010158-10-940x940.webp?v=1770315351", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/150339010158-10-1.jpg?v=1770315351", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/150339010158-10-940x940_1.webp?v=1770315351"],["35"]],['NIKE SIR FORCE 1 LOW LV8','PUMAFASHION',75.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/m_wp_6598327f2fbf1a4237fa311a.webp?v=1770315281", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/m_wp_6598328158083d42e7b80e71.webp?v=1770315281", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/m_wp_659832822fbf1a9acefa3136.webp?v=1770315281"],["35.5"]],['NIKE M2K TEKNO','PUMAFASHION',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/NIKE-M2K-TEKNO-WHITE-100-UNIVERSITY-RED-AV4789-104_2.jpg?v=1770315192", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/NIKE-M2K-TEKNO-WHITE-100-UNIVERSITY-RED-AV4789-104_3.jpg?v=1770315193", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/NIKE-M2K-TEKNO-WHITE-100-UNIVERSITY-RED-AV4789-104_4.jpg?v=1770315192", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/NIKE-M2K-TEKNO-WHITE-100-UNIVERSITY-RED-AV4789-104.jpg?v=1770315192", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/NIKE-M2K-TEKNO-WHITE-100-UNIVERSITY-RED-AV4789-104_1.jpg?v=1770315192"],["40.5", "40"]],['NIKE FLEX RUNNER 3','PUMAFASHION',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/AT4662-602.webp?v=1770315004"],["40"]],['PUMA CLYDE','PUMA FASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/394834-01_1.webp?v=1770253188", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/394834-01_2.webp?v=1770253188", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/394834-01_3.webp?v=1770253188", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/394834-01_4.webp?v=1770253188", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/394834-01_5.webp?v=1770253188"],["42.5"]],['JADA CRYSTAL WINGS JR','PUMA FASHION',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/51SpwtC4gTL._AC_SY575.jpg?v=1770253977", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/d33e5dc0c188b92d94ac14873d8f7157_94ff70c5-5fb9-477f-b49d-73cdb1d78b2c.webp?v=1770253977", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/51yaMHN6gkL._AC_SY695.jpg?v=1770253977", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/51_F0N-V4jL._AC_SY575.jpg?v=1770253977", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/51A4DUnfazL._AC_SY575.jpg?v=1770253977"],["37", "38", "39", "37.5", "38.5"]],['PUMA CARINA 2.0 STAR GLOW','PUMA FASHION',85.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Capturadepantalla2026-02-04201007.png?v=1770253844", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Capturadepantalla2026-02-04201029.png?v=1770253844"],["37.5", "39"]],['PUMA KAIA 2,0 WOMEN','PUMA FASHION',110.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/D_NQ_NP_2X_964765-MLM78215503052_082024-F-tenis-puma-de-plataforma-kaia-20-negro-de-dama-392320-01.webp?v=1770253717", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/D_NQ_NP_2X_679011-MLM78444827419_082024-F-tenis-puma-de-plataforma-kaia-20-negro-de-dama-392320-01.webp?v=1770253717", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/D_NQ_NP_2X_822223-MLM78215503076_082024-F-tenis-puma-de-plataforma-kaia-20-negro-de-dama-392320-01.webp?v=1770253717"],["36"]],['PUMA X PLEASURES','PUMA FASHION',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/pleasures-puma-velophasis-layer-birch-tree-391696-02-dead-stock-2-819x1024-1920x.webp?v=1770253537", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/pleasures-puma-velophasis-layer-birch-tree-391696-02-dead-stock-3-819x1024-1920x.webp?v=1770253537", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/pleasures-puma-velophasis-layer-birch-tree-391696-02-dead-stock-4-819x1024-1920x.webp?v=1770253537", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/pleasures-puma-velophasis-layer-birch-tree-391696-02-dead-stock-1-819x1024-1920x.webp?v=1770253537", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/pleasures-puma-velophasis-layer-birch-tree-391696-02-dead-stock-5-819x1024-1920x.webp?v=1770253537"],["44"]],['PUMA ANZARUN FS','PUMA FASHION',85.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/main-square_750x_be2c52bd-1723-46b8-9330-a8e08aede764.webp?v=1770253452", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Anzarun-FS-Renew-Sneakers_066e1bbe-70cb-4e87-9a32-a6c21a667ceb.webp?v=1770253453"],["42.5"]],['PUMA COURT ULTRA LITE','PUMA FASHION',75.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/MKP008328__600__600__CALZADO-PUMA-COURT-ULTRA-LITE-DAMA-389371-09-CALCE-PY-36---UK-3_5.webp?v=1770253339", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/600__600__73c539-389371_09_sv04.jpg?v=1770253339"],["38", "39"]],['PUMA VELOPHASIS PHASED','PUMA FASHION',110.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_d9301d0b-627a-4644-abec-3f2d937fe202.webp?v=1770252909", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_1_82daba69-dc1c-41d8-a49e-d9935b360466.webp?v=1770252909", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_2_d0a3064a-7945-4ba5-8f17-fa02b5de5973.webp?v=1770252909", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_3_5aefc6db-b286-46e0-b3de-bde2841a4899.webp?v=1770252909", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_4_13b0186c-202f-4e89-8a2b-ac68a147f95d.webp?v=1770252909"],["43"]],['PUMA RBD GAME LOW','PUMA FASHION',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at7.50.54PM_1.jpg?v=1770327846", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at7.50.54PM.jpg?v=1770327846", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at7.50.55PM_1.jpg?v=1770327846", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at7.50.55PM.jpg?v=1770327835"],["33"]],['PUMA PLEXUS RETRO','PUMA FASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/puma-plexus-retro-puma-black-pale-lemon.webp?v=1770252405", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/puma-plexus-retro-puma-black-pale-lemon_1.webp?v=1770252405", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/puma-plexus-retro-puma-black-pale-lemon_2.webp?v=1770252405", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/puma-plexus-retro-puma-black-pale-lemon_3.webp?v=1770252405", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/puma-plexus-retro-puma-black-pale-lemon_4.webp?v=1770252405"],["43", "41"]],['PUMA JADA RENEW WNS','PUMA FASHION',85.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/649db77f27194-386401-01-1-1600x1600.jpg?v=1770252292", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/649db78dab6ed-386401-01-3-1600x1600.jpg?v=1770252292", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/649db7936ffa9-386401-01-4-1600x1600.jpg?v=1770252292"],["40"]],['RBD GAME','PUMA FASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/PUMAII00371-scaled.jpg?v=1770252216", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/PUMAII00371-0001-600x600.jpg?v=1770252216"],["44.5", "44"]],['PUMA RICKIE AC PS','PUMA FASHION',65.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/xZgwPc0CUhEzoGD5puma__pum-385836-07__imagefront.webp?v=1770252152", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/BU8gLHNrL0bUJSbkpuma__pum-385836-07__sideview01.webp?v=1770252152", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/T2hLRyQDjSWNB4ahpuma__pum-385836-07__backview.webp?v=1770252152", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/rLaiwAnB3Bo2qM5wpuma__pum-385836-07__sideview04.webp?v=1770252152"],["34"]],['PUMA ST RUNNER V3 L','PUMA FASHION',85.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/384857-19-deportivas-economicas-casual-puma-st-runner-v3-hombre-verdes-4.webp?v=1770252063", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/384857-19-zapatillas-baratas-casual-puma-st-runner-v3-hombre-verdes-1.webp?v=1770252063", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/384857-19-zapatillas-economicas-casual-puma-st-runner-v3-hombre-verdes-3.webp?v=1770252063", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/384857-19-deportivas-baratas-casual-puma-st-runner-v3-hombre-verdes-2.webp?v=1770252063"],["40.5"]],['PUMA ST RUNNER V3 MESH','PUMA FASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/puma-st-runner-v3-mesh-m-384640-11-shoes-blue-790x790.jpg?v=1770251983", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/puma-st-runner-v3-mesh-m-384640-11-shoes-blue-1-790x790.jpg?v=1770251983"],["41"]],['PUMA REVERSE CLASSICS','PUMA FASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/pu383534-01-1.jpg?v=1770251926", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/pu383534-01-2.jpg?v=1770251927", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/pu383534-01-3.jpg?v=1770251926", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/pu383534-01-4.jpg?v=1770251926"],["40.5"]],['FUTURE RIDER DIS','PUMA FASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Capturadepantalla2026-02-04193619.png?v=1770251838", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Capturadepantalla2026-02-04193629.png?v=1770251839", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Capturadepantalla2026-02-04193645.png?v=1770251839", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Capturadepantalla2026-02-04193659.png?v=1770251838"],["42.5", "43", "44", "44.5"]],['PUMA VIKKY V3 LTHR WNS','PUMA FASHION',85.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/D_NQ_NP_2X_827377-MLM77435484673_072024-F-tenis-puma-vikky-v3-blanco-blanco-damajunior-383115-13-i.webp?v=1770251677", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/D_NQ_NP_2X_991010-MLM77435818547_072024-F-tenis-puma-vikky-v3-blanco-blanco-damajunior-383115-13-i.webp?v=1770251677", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/D_NQ_NP_2X_875123-MLM77435779335_072024-F-tenis-puma-vikky-v3-blanco-blanco-damajunior-383115-13-i.webp?v=1770251677", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/D_NQ_NP_2X_646731-MLM77435484691_072024-F-tenis-puma-vikky-v3-blanco-blanco-damajunior-383115-13-i.webp?v=1770251677"],["39", "38.5"]],['PUMA CAVEN PS','PUMA FASHION',65.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at7.30.56PM_2.jpg?v=1770251567", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at7.30.56PM_1.jpg?v=1770251567", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at7.30.57PM.jpg?v=1770251567", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at7.30.56PM.jpg?v=1770251567"],["35"]],['GRAVITION AC','PUMA FASHION',65.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at7.23.10PM.jpg?v=1770251485", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at7.23.10PM_1.jpg?v=1770251486", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at7.23.10PM_2.jpg?v=1770251485"],["31", "35", "37.5"]],['PUMA CAVEN','PUMA FASHION',75.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/50bd1c70-95ad-4f10-bb73-19eba8664632.9ea7237ef96998c4d2a1a12fbe6fca23.webp?v=1770251406", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/f6fe9d42-d64f-4eeb-800f-e66c49cbad50.2322715d397abae5494b9d0b87b83c68.webp?v=1770251406", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/fc866810-9d56-413b-be7d-aab8a7d0949c.63d77ecf9eb70c83bc423e527ffd0d08.webp?v=1770251406"],["44.5"]],['REBOUND JOY LOW','PUMA FASHION',85.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at7.16.01PM.jpg?v=1770251308", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at7.16.01PM_2.jpg?v=1770251308", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at7.16.01PM_1.jpg?v=1770251300"],["36", "37", "40"]],['GRAVITION','PUMA FASHION',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.57.23PM.jpg?v=1770251097", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.57.24PM.jpg?v=1770251097", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.57.24PM_1.jpg?v=1770251097"],["42.5", "42"]],['PUMA SOFTRIDE SOPHIA','PUMA FASHION',75.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.50.57PM.jpg?v=1770250977", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.50.58PM.jpg?v=1770250977", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.50.58PM_1.jpg?v=1770250977"],["37.5"]],['PUMA TRANSPORT','PUMA FASHION',95.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.43.56PM.jpg?v=1770250896", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.43.55PM.jpg?v=1770250896", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.43.56PM_1.jpg?v=1770250886"],["37.5"]],['PUMA RETALIATE','PUMA FASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.42.01PM.jpg?v=1770250811", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.42.01PM_1.jpg?v=1770250811", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.42.02PM.jpg?v=1770250811"],["42"]],['ANZARUN LITE','PUMA FASHION',75.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.40.16PM.jpg?v=1770250728", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.40.16PM_1.jpg?v=1770250728", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.40.16PM_2.jpg?v=1770250728"],["44", "42.5", "43"]],['PUMA CILIA MODE WNS','PUMA FASHION',75.0,null,[],["38.5"]],['PUMA REBOUND LAYUP SL','PUMA FASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.31.49PM.jpg?v=1770250649", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.31.49PM_1.jpg?v=1770250649", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.31.49PM_2.jpg?v=1770250649", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.31.49PM_3.jpg?v=1770250649"],["42"]],['PUMA SHUFFLE','PUMA FASHION',85.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.28.49PM_3.jpg?v=1770250573", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.28.49PM_1.jpg?v=1770250573", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.28.49PM_2.jpg?v=1770250573", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.28.49PM.jpg?v=1770250573"],["44.5"]],['PUMA RETALIATE 2','PUMA FASHION',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.21.03PM.jpg?v=1770250485", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.21.03PM_1.jpg?v=1770250486", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.21.04PM.jpg?v=1770250485", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.21.04PM_1.jpg?v=1770250485"],["42.5"]],['PUMA SHUFFLE V PS','PUMA FASHION',65.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.13.31PM_3.jpg?v=1770250371", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.13.31PM.jpg?v=1770250371", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.13.31PM_2.jpg?v=1770250371", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.13.31PM_1.jpg?v=1770250371"],["33"]],['PUMA REBOUND JOY','PUMA FASHION',95.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.09.03PM.jpg?v=1770250279", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.09.04PM.jpg?v=1770250279", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.09.04PM_1.jpg?v=1770250279", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.09.04PM_2.jpg?v=1770250279"],["42", "41"]],['PUMA UP TRAINERS WHITE','PUMA FASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.03.55PM_3.jpg?v=1770250191", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.03.55PM.jpg?v=1770250191", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.03.55PM_1.jpg?v=1770250191", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at6.03.55PM_2.jpg?v=1770250191"],["41", "42", "42.5", "43", "44", "44.5"]],['BMW MMS WIRED RUN','PUMA FASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at5.54.40PM.jpg?v=1770250097", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at5.54.41PM.jpg?v=1770250097", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at5.54.41PM_1.jpg?v=1770250089", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at5.54.40PM_1.jpg?v=1770250089"],["42.5", "42", "44", "44.5"]],['PUMA BMW MMS CAVEN','PUMA FASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at5.46.21PM.jpg?v=1770249704", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at5.46.21PM_1.jpg?v=1770249704", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at5.46.21PM_2.jpg?v=1770249704"],["44"]],['PUMA MAPF1 CAVEN','PUMA FASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at5.05.35PM.jpg?v=1770249561", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at5.05.35PM_1.jpg?v=1770249561", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at5.05.35PM_2.jpg?v=1770249561", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at5.05.35PM_3.jpg?v=1770249561"],["44.5"]],['PUMA MERCEDES','PUMA FASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at5.02.14PM_1.jpg?v=1770249487", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at5.02.13PM_1.jpg?v=1770249487", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at5.02.14PM.jpg?v=1770249487", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at5.02.13PM.jpg?v=1770249487"],["44"]],['FERRARI TIBURION','PUMA FASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at3.51.35PM.jpg?v=1770249406", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at3.51.35PM_2.jpg?v=1770249412", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at3.51.34PM.jpg?v=1770249412", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at3.51.35PM_1.jpg?v=1770249412"],["40", "41", "42", "42.5"]],['PUMA MAPF 1 TIBURION','PUMA FASHION',75.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at3.24.42PM_1.jpg?v=1770249345", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at3.24.42PM.jpg?v=1770249345", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at3.24.41PM.jpg?v=1770249345", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at3.24.42PM_2.jpg?v=1770249345"],["42.5"]],['PUMA FERRARI ELECTRON','PUMA FASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at3.14.56PM.jpg?v=1770249205", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at3.14.57PM.jpg?v=1770249205", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at3.14.57PM_1.jpg?v=1770249205"],["42", "42.5"]],['PUMA MAPF1 WIRED RUN','PUMA FASHION',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at2.51.34PM.jpg?v=1770249156", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at2.51.34PM_1.jpg?v=1770249156", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at2.51.34PM_2.jpg?v=1770249157", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at2.51.35PM.jpg?v=1770249157"],["42.5", "44"]],['SOFTRIDE SOPHIA SLIP ON WNS','PUMA FASHION',85.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at2.43.26PM_2.jpg?v=1770249081", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at2.43.26PM_1.jpg?v=1770249081", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at2.43.26PM.jpg?v=1770249073", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-02-04at2.43.25PM.jpg?v=1770249073"],["39", "37.5", "37", "38.5"]],['ADIDAS TENIS CORERACER','PUMAFASHION',70.0,null,[],["43.5", "44", "44.5", "41.5", "40.5", "42", "42.5", "40"]],['CONVERSE CHINATOWN','PUMAFASHION',60.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_56d15dea-e253-42f9-a2b5-abbd4b1b4400.webp?v=1769924436", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_2_d2e114b9-632e-4ffd-a268-4695a962491e.webp?v=1769924439", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_1_962bb884-35b1-4c3c-ab2d-59d209d035f3.webp?v=1769924438"],["25", "22", "24", "21"]],['BALMAIN WHITTE 2','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at5.57.52PM.jpg?v=1769923839", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at5.57.53PM_1.jpg?v=1769923839", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at5.57.52PM_1.jpg?v=1769923839", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at5.57.53PM.jpg?v=1769923839"],["38", "39", "40", "41"]],['BALMAIN PURE','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at6.30.55PM.jpg?v=1769923811", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at6.30.55PM_1.jpg?v=1769923811", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at6.30.55PM_2.jpg?v=1769923811", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at6.30.56PM.jpg?v=1769923811"],["39", "38", "41", "40", "42"]],['BALMAIN - FF','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-31at6.12.32PM_1.jpg?v=1769923734", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-31at6.12.32PM.jpg?v=1769923734", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-31at6.12.32PM_2.jpg?v=1769923727"],["42", "40", "39", "38"]],['BALMAIN PANTHER','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at4.39.39PM.jpg?v=1769922648", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at4.39.40PM.jpg?v=1769922648", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at4.39.39PM_2.jpg?v=1769922648", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at4.39.39PM_1.jpg?v=1769922641"],["40", "38", "39", "42"]],['BALMAIN PURE WHITTE','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at4.38.07PM_1.jpg?v=1769922349", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at4.38.07PM.jpg?v=1769922349", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at4.38.08PM.jpg?v=1769922341"],["39", "40", "41", "38"]],['BALMAIN SKY LINNUX','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at5.46.28PM_1.jpg?v=1769921722", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at5.46.29PM.jpg?v=1769921722", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at5.46.28PM.jpg?v=1769921722"],["40", "39", "38"]],['BALMAIN BLACK CORE','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at6.02.07PM_1.jpg?v=1769921503", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at6.02.07PM_2.jpg?v=1769921503", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at6.02.07PM.jpg?v=1769921503"],["39", "38", "41", "40", "42"]],['BALMAIN GREEN ORANGE','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at6.12.34PM.jpg?v=1769920975", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at6.12.34PM_3.jpg?v=1769920975", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at6.12.34PM_1.jpg?v=1769920937", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at6.12.34PM_2.jpg?v=1769920938"],["40", "38", "42", "39"]],['BALMAIN BLACK','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at7.02.42PM_1.jpg?v=1769920524", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at7.02.42PM_3.jpg?v=1769920524", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at7.02.42PM.jpg?v=1769920524", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at7.02.42PM_2.jpg?v=1769920517"],["40", "39", "38", "42"]],['BALMAIN ULTIMATE','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at6.51.36PM_1.jpg?v=1769897854", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at6.51.36PM_2.jpg?v=1769897854", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at6.51.35PM.jpg?v=1769897854", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-30at6.51.36PM.jpg?v=1769897854"],["38", "42", "39", "41", "40"]],['BALMAIN ORANGE BLACK','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Whats-App-Image-2026-01-30-at-6-57-19-PM.jpg?v=1769897321", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Whats-App-Image-2026-01-30-at-6-57-19-PM-1.jpg?v=1769897321", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Whats-App-Image-2026-01-30-at-6-57-20-PM.jpg?v=1769897321", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Whats-App-Image-2026-01-30-at-6-57-20-PM-1.jpg?v=1769897321"],["38", "42", "39", "41", "40"]],['BALMAIN WHITTE BLUE','PUMAFASHION',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Whats-App-Image-2026-01-30-at-5-38-19-PM.jpg?v=1769895124", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Whats-App-Image-2026-01-30-at-5-38-18-PM-1.jpg?v=1769895124", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Whats-App-Image-2026-01-30-at-5-38-18-PM.jpg?v=1769895124", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Whats-App-Image-2026-01-30-at-5-38-19-PM-1.jpg?v=1769895124"],["42", "39", "38", "40", "41"]],['ASICS GEL-LYTE','PumaFashionStore',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l960.webp?v=1769204724", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600.webp?v=1769204724", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l960_1.webp?v=1769204724", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l960_2.webp?v=1769204724", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l960_3.webp?v=1769204724"],["40", "41", "42", "43", "44"]],['Skechers','PumaFashionStore',0.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196989421858-1.jpg?v=1769202637", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196989421858-2.jpg?v=1769202637", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196989421858-3.jpg?v=1769202637", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196989421858-4.jpg?v=1769202637"],["36", "37", "37-5", "36-5", "38", "38-5", "39-5", "39"]],['PUMA COURT CLASSIC','PumaFashionStore',85.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/395018_07-puma-avalyne-vyrams-stilius-mada-sportui-treniruotems-laisvalaikiui-sportsman.lt_1.webp?v=1769263705", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/395018_07-puma-avalyne-vyrams-stilius-mada-sportui-treniruotems-laisvalaikiui-sportsman.lt_4.webp?v=1769263705", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/395018_07-puma-avalyne-vyrams-stilius-mada-sportui-treniruotems-laisvalaikiui-sportsman.lt_2.webp?v=1769263705", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/395018_07-puma-avalyne-vyrams-stilius-mada-sportui-treniruotems-laisvalaikiui-sportsman.lt_7.webp?v=1769263670", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/395018_07-puma-avalyne-vyrams-stilius-mada-sportui-treniruotems-laisvalaikiui-sportsman.lt_5.webp?v=1769263670", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/395018_07-puma-avalyne-vyrams-stilius-mada-sportui-treniruotems-laisvalaikiui-sportsman.lt_5__1.webp?v=1769263670"],["42,5", "44", "44,5", "43"]],['PUMA CLYDE PREMIUM BLANCO','PumaFashionStore',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/puma-clyde-premium-39483401_1.webp?v=1769264053", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/puma-clyde-premium-39483401_3.webp?v=1769264053", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/puma-clyde-premium-39483401_4.webp?v=1769264053", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/puma-clyde-premium-39483401_2.webp?v=1769264031"],["41"]],['PUMA SLIPTREAM BB TEE','PumaFashionStore',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/d33e5dc0c188b92d94ac14873d8f7157.webp?v=1769264431", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/3324075009_01_aaa89475-682b-471f-b0b6-80939f806cbb.webp?v=1769264431", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/3324075009_04.webp?v=1769264431"],["37", "37,5", "36"]],['PUMA BOTIN','PumaFashionStore',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/393842-01.png?v=1769265239"],["38"]],['PUMA CALI COURT BEACH DAY','PumaFashionStore',85.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/main-square_90039310-d945-483d-a65d-09b554463e86.webp?v=1769265401", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/1_125855d3-b76b-4f81-80d2-f8a018d1d0cb.webp?v=1769265401", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2_74b90587-cf2b-488e-9762-15aab8c3ab94.webp?v=1769265401", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/3_5e5b1ad5-9100-4ab7-af76-8bb7bd40d8bc.jpg?v=1769265401", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/4_76c233ba-9450-41e5-b408-ffe995d132bb.jpg?v=1769265401"],["38,5", "40"]],['PUMA CA PRO SPORT','PumaFashionStore',95.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/uVzC4Ox9atjOtSmhi9h2F3QV2MIaOKVm-1-1.jpg?v=1769266129", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/GWN4YRsBMFisqwswe10FCM8uU8AezbUh-1-1.jpg?v=1769266129", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/No9B2mYwb10kzAKF6lIP5ExG7LTpnQ2a-1.jpg?v=1769266129", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/kSg0NDYTnvm0a7nM2Y25FTTLNYardF7G-1-1.jpg?v=1769266129", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/pEtQo9AyEajlK7eBQuYmt0JkM3WVi1y8-1-1.jpg?v=1769266129"],["45"]],['CARINA 2.0 CRYSTAL WINGS PS','PumaFashionStore',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/6581e33cc0e5e_392654-02jpg.jpg?v=1769266492", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/6581e3313fde0_392654-02-2-jpg.jpg?v=1769266507", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/6581e334ceb08_392654-02-3-jpg.jpg?v=1769266507", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/6581e338bf58f_392654-02-4-jpg.jpg?v=1769266507"],["38", "38,5", "33", "35", "29", "32", "34", "30"]],['CARINA 2.0 LOGOBSESION WNS','PumaFashionStore',75.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Capturadepantalla2026-01-24095937.png?v=1769266820"],["39", "37,5"]],['CARINA STREET BETTER WNS','PumaFashionStore',85.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/392513_02.webp?v=1769268666", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/392513_02_sv02.webp?v=1769268984", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/392513_02_sv04.webp?v=1769268984", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/392513_02_sv01.webp?v=1769268984"],["38,5"]],['PUMA REBOUND V6 LOW WNS','PumaFashionStore',85.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/w_1200_h_1200_fit_pad_2.webp?v=1769269110", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/w_1200_h_1200_fit_pad_1.webp?v=1769269110", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/w_1200_h_1200_fit_pad_3.webp?v=1769269110", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/w_1200_h_1200_fit_pad.webp?v=1769269110"],["37,5"]],['PUMA REBOUND V6','PumaFashionStore',85.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/392326-11-1.jpg?v=1769269701"],["38", "38,5"]],['PUMA KAIA 2.0 WNS','PumaFashionStore',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-24at1.24.35PM.jpg?v=1769281029", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-24at1.24.36PM.jpg?v=1769281029", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-24at1.24.36PM_1.jpg?v=1769281029", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/WhatsAppImage2026-01-24at1.24.36PM_2.jpg?v=1769281029"],["38,5", "37,5"]],['PUMA CAVEN 2.0','PumaFashionStore',75.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_2.webp?v=1769282484", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_510a6de1-72ff-4645-8eb0-eb50aff6b67d.webp?v=1769282484", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_1.webp?v=1769282484", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_3.webp?v=1769282484"],["44,5", "42,5"]],['NIKE AIR MAX E','PumaFashionStore',100.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/CD4165016_3_3456x3456_a854d6fe-fcea-4e9e-94f5-24b61a07e16f.webp?v=1769205994", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/CD4165016_1_3456x3456_b81431b0-4162-4c0e-881c-228b2c039a0d.webp?v=1769205994", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/CD4165016_5_3456x3456_59260561-5b1a-4f5d-945a-3fad59e47dcc.webp?v=1769205994", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/CD4165016_4_3456x3456_59cc8ba9-1c23-4b02-a582-a7d8f48abff9.webp?v=1769205994"],["43", "40"]],['NIKE AIR JORDAN 6 RETRO LOW','PumaFashionStore',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_99a25006-c638-49a6-bc27-5d77e8af3de9.webp?v=1769205764", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l960_c380248c-e137-4144-ac33-e740c5a73880.webp?v=1769205764", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l960_1_47d12188-b5cc-4975-bde1-216d130cc584.webp?v=1769205764", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l960_2_eb94d7b3-c9e0-47e3-8d75-1bc01933dc8e.webp?v=1769205764", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l960_3_61a3abe0-3b1d-427c-a995-04679db13483.webp?v=1769205764"],["38,5", "37,5"]],['NIKE SUPERREP GO 3 NN FK','PumaFashionStore',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196607674079_4_20240131120000-mrtPeru.webp?v=1769205156", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196607674079_1_20240131120000-mrtPeru.webp?v=1769205156", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196607674079_2_20240131120000-mrtPeru.webp?v=1769205156", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196607674079_3_20240131120000-mrtPeru.webp?v=1769205156", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/196607674079_7_20240131120000-mrtPeru.webp?v=1769205156"],["40", "40,5", "41", "42", "42,5", "43"]],['ADIDAS GAZELLE 85','PumaFashionStore',90.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_1_0581458c-288c-41b3-9a36-ea1decdb550d.webp?v=1770066473", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_2_23379441-47c3-42af-950e-addd2aa8f2e5.webp?v=1770066473", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_3_5156f32f-cefd-49cc-97e2-cdbcaeee201a.webp?v=1770066473", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/s-l1600_1c377d97-4f7b-4bd8-b52b-292fa4b760c5.webp?v=1770066473"],["44,5", "42,5"]],['ADIDAS TENIS RESPONSE RUNNER','PumaFashionStore',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adi-run-c-19.jpg?v=1770065950", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/elephant_adi-run-c_9_d_20260128135352.jpg?v=1770065986", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/elephant_adi-run-c_1_d_20260128135359.jpg?v=1770066010", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/elephant_adi-run-c_6_d_20260128135305.jpg?v=1770066010"],["46", "43,5", "44", "44,5", "45,5", "42,5", "40,5", "41,5"]],['ADIDAS RESPONSE RUNNER','PumaFashionStore',75.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2_c47f43eb-501c-42b4-acf7-f480e1066d2a.webp?v=1770065240", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/3_d3573aa3-8475-4a0d-ac3f-156fda830adb_1920x_1.webp?v=1770065240", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/4_1920x_f44058c6-2b44-4dd9-9099-ff0bf66d7dd0.webp?v=1770065240", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/51YxZwmLygL._AC_UF1000_1000_QL80.jpg?v=1770065240"],["42", "42,5", "43,5", "44,5", "46", "40", "45,5"]],['ADIDAS TENIS LITE RACER','PumaFashionStore',65.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/65fdb248e2115-if5393-02-1600x1600.jpg?v=1769315271", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/65fdb25537c11-if5393-03-1600x1600.jpg?v=1769315271", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/65fdb25cee024-if5393-04-1600x1600.jpg?v=1769315261"],["38,5", "38", "40,5", "39,5", "37,5", "36", "36,5", "42,5"]],['IF6449 ADIDAS TENIS COURTBLOCK','PumaFashionStore',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/IF6449_ADIDAS_TENIS_COURTBLOCK_0083d7c6-d0c8-4f13-bc9b-a2b07c2f752a.webp?v=1774548221", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas_397371_IF6449_20231213T143903_04.webp?v=1774549525"],["42.5", "44.5", "42", "44", "43.5", "38.5", "45.5", "41.5"]],['ADIDAS STAN SMITH 80S','PumaFashionStore',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/27460.jpg?v=1769314939", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/27462.jpg?v=1769314946", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/27461.jpg?v=1769314946"],["44,5"]],['ADIDAS TENIS GALAXY 6','PumaFashionStore',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/3_750x_23756353-c4ec-4ff1-998c-3290f9281ddc.webp?v=1769314838", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/main-square_750x_93fce7dd-f00c-4886-a197-8f2c9e0de8a5.webp?v=1769314838", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/4_750x_159e92f6-f73d-4353-8394-ddb28037b925.webp?v=1769314830"],["44", "45,5", "42,5"]],['ADIDAS BREAKNET 2,0','PumaFashionStore',75.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/09HMYR-3.webp?v=1769314086", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/09HMYR-2.webp?v=1769314123", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/09HMYR-1.webp?v=1769314123"],["38", "39,5", "38,5", "40,5", "40"]],['ADIDAS SHOES CENTENNIAL 85 LOW','PumaFashionStore',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Zapatillas_Centennial_85_Low_001_Beige_ID5774_09_standard.avif?v=1769204506", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Zapatillas_Centennial_85_Low_001_Beige_ID5774_05_standard.avif?v=1769204506", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Zapatillas_Centennial_85_Low_001_Beige_ID5774_06_standard.avif?v=1769204506", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Zapatillas_Centennial_85_Low_001_Beige_ID5774_41_detail.avif?v=1769204484", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Zapatillas_Centennial_85_Low_001_Beige_ID5774_02_standard_hover.avif?v=1769204484", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Zapatillas_Centennial_85_Low_001_Beige_ID5774_03_standard.avif?v=1769204483", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Zapatillas_Centennial_85_Low_001_Beige_ID5774_04_standard.avif?v=1769204484"],["44,5"]],['ADIDAS SWITCH MOVE','PumaFashionStore',75.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/6566cc887a574_122461-cf-12jpg.jpg?v=1769204185", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/6566cc9989f28_122461-cf-08jpg.jpg?v=1769204185", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/6566cc91bc007_122461-cf-10jpg.jpg?v=1769204185", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/6566cc95979a9_122461-cf-09jpg.jpg?v=1769204185"],["41,5", "40,5"]],['ADIDAS TENIS DURAMO','PumaFashionStore',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/ID2705_5_FOOTWEAR_Photography_Front_Lateral_Top_View_grey_77fe.jpg?v=1769203917", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/ID2705_1_FOOTWEAR_Photography_Side_Lateral_Center_View_grey_1e13.jpg?v=1769203917", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/ID2705_3_FOOTWEAR_Photography_Bottom_View_grey_c7ab.jpg?v=1769203917", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/ID2705_4_FOOTWEAR_Photography_Side_Medial_Center_View_grey_f76f.jpg?v=1769203917"],["38", "37,5", "36", "40", "36,5", "38,5", "39,5", "40,5"]],['ADIDAS TENIS DURAMO RC','PumaFashionStore',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/ID2703_6_FOOTWEAR_Photography_FrontLateralTopView_white.webp?v=1769203758", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/ID2703_3_FOOTWEAR_Photography_TopPortraitView_white.webp?v=1769203758", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/ID2703_1_FOOTWEAR_Photography_SideLateralCenterView_white.webp?v=1769203758"],["40", "40,5", "41,5", "42", "42,5", "44", "44,5", "45,5"]],['ADIDAS ADIMATIC ROSA','PumaFashionStore',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-originals-adimatic-wonqua-crywht-gum3-hq6909-footwear_sneaker-packshots-0.jpg?v=1769313589", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-originals-adimatic-wonqua-crywht-gum3-hq6909-footwear_sneaker-packshots-30.webp?v=1769313589", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-originals-adimatic-wonqua-crywht-gum3-hq6909-footwear_sneaker-packshots-150.jpg?v=1769313589"],["42,5"]],['ADIDAS RUNFALCON 3,0','PumaFashionStore',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/HP7543-zapatillas-baratas-correr-adidas-runfalcon-3.0-hombre-blancas-1.webp?v=1769313475", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/HP7543-deportivas-economicas-correr-adidas-runfalcon-3.0-hombre-blancas-4.webp?v=1769313483", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/HP7543-bambas-economicas-correr-adidas-runfalcon-3.0-hombre-blancas-5.webp?v=1769313483"],["44,5", "41,5", "44", "42,5", "45,5"]],['ADIDAS TENIS LITE','PumaFashionStore',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/990ce7_c8b52b31a26041e88f8c780795ecc685_mv2.webp?v=1769313365", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/D_NQ_NP_2X_915363-MPE54667387695_032023-F-zapatillas-adidas-mujer-running-lite-racer-30-hp6104.webp?v=1769313365", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/D_NQ_NP_2X_678053-MPE54667476779_032023-F-zapatillas-adidas-mujer-running-lite-racer-30-hp6104.webp?v=1769313365"],["41,5", "39,5", "38", "38,5"]],['ADIDAS RUNNING GALAXY 6','PumaFashionStore',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/zapatos-adidas-hoops-3-0-gy5435-white-blue-0000302291649_cb32f52b-bc7c-41a6-99d9-74de002276cc.webp?v=1769312985", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/HP2422_6_FOOTWEAR_Photography_Front_Lateral_Top_View_white_f225cfcb-5530-4a84-9bed-9f5b2a7eba54.webp?v=1769312985", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/HP2422_7_FOOTWEAR_Photography_Back_Lateral_Top_View_white_dd07d20d-4781-4509-8cfe-37ae3e568927.webp?v=1769312984"],["46", "44,5"]],['ADIDAS RUNNIG SHOES FOR','PumaFashionStore',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/1400_1.webp?v=1769312830", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/1400.webp?v=1769312838", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/1400_2.webp?v=1769312838"],["40,5", "45,5", "44,5", "42,5", "42", "44"]],['ADIDAS RUN 60S 2.0 SHOES','PumaFashionStore',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/81003574_0.webp?v=1769312691", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/81003574_1.webp?v=1769312691", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/81003574_3.webp?v=1769312691"],["44,5"]],['ADIDAS RUN 60S 2,0','PumaFashionStore',65.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-buty-run-60s-2-0-h00354-39c48e9a.jpg?v=1769202213", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-buty-run-60s-2-0-h00354-a739e805.jpg?v=1769202213", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-buty-run-60s-2-0-h00354-c86b4e3a.jpg?v=1769202213", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-buty-run-60s-2-0-h00354-fb0aa9ee.jpg?v=1769202213", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-buty-run-60s-2-0-h00354-d9576066.jpg?v=1769202213"],["46", "47,5"]],['ADIDAS TORSION SUPER','PumaFashionStore',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/27669.jpg?v=1769312461", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/27670.jpg?v=1769312461", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/27672.jpg?v=1769312462"],["42", "44,5"]],['ADIDAS CAMPUS 80S COOK','PumaFashionStore',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/main-square_1920x_fe00ed35-fe53-4d45-908d-d505f200adff.webp?v=1769200168", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/1_1920x_a351c1b8-08c1-47e6-a9dc-eb5499fcd52c.webp?v=1769200168", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2_1920x_3793bf08-0c77-405a-a5f9-f0836afafb1b.webp?v=1769200168", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/3_1920x_c9155ed6-d2a6-48dc-ac43-cf0c4289d653.webp?v=1769200168"],["40,5", "41,5", "44"]],['ADIDAS COOK CAMPUS 80S','PumaFashionStore',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/Capture-2024-07-12-115223-square_1920x_3e691cb7-cb24-4816-bd3f-cf69e3f016ae.webp?v=1769201233", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/3_1920x_1582bdbf-7989-4d26-9e5f-34d047968c40.webp?v=1769201233", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/1_1920x_5aec182d-5a10-4c36-b188-05a496bd62a7.webp?v=1769201197", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/2_1920x_919ed527-16c5-412e-b9fa-3e1c9b82966e.webp?v=1769201197", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/4_1920x_b17da366-74d6-4a1b-b03a-125c0b15677e.webp?v=1769201198"],["42"]],['ADIDAS TENIS HOOPS 3.0 LOW','PumaFashionStore',75.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/zapatos-adidas-hoops-3-0-gy5435-white-blue-0000302291649_2.webp?v=1769312071", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/zapatos-adidas-hoops-3-0-gy5435-white-blue-0000302291649.webp?v=1769312078", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/zapatos-adidas-hoops-3-0-gy5435-white-blue-0000302291649_1.webp?v=1769312078"],["44,5"]],['ADIDAS TENIS LITE RACER 3.0','PumaFashionStore',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/1425114-800-auto.webp?v=1769200906", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/1425115-800-auto.webp?v=1769200906", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/1425116-800-auto.webp?v=1769200906", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/1425117-800-auto.webp?v=1769200906", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/1425113-800-auto.webp?v=1769200906"],["42", "43,5", "45,5", "40", "41,5", "40,5", "46", "42,5"]],['ADIDAS TENNIS RUN','PumaFashionStore',75.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/zapatos-adidas-run-gx8237-blue-rush-core-black-cloud-white.webp?v=1769311562", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/zapatos-adidas-run-gx8237-blue-rush-core-black-cloud-white_1.webp?v=1769311562", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/zapatos-adidas-run-gx8237-blue-rush-core-black-cloud-white_2.webp?v=1769311562"],["43,5", "44", "44,5", "41,5", "40"]],['ADIDAS NEBZED','PumaFashionStore',65.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-nebzed-damskie-buty-lifestyle-szary-gx4211_2.jpg?v=1769200702", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-nebzed-damskie-buty-lifestyle-szary-gx4211_3.jpg?v=1769200702", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-nebzed-damskie-buty-lifestyle-szary-gx4211.jpg?v=1769200702", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-nebzed-damskie-buty-lifestyle-szary-gx4211_4.jpg?v=1769200702", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-nebzed-damskie-buty-lifestyle-szary-gx4211_6.jpg?v=1769200702", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-nebzed-damskie-buty-lifestyle-szary-gx4211_3_1.jpg?v=1769200615", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-nebzed-damskie-buty-lifestyle-szary-gx4211_5.jpg?v=1769200615"],["39,5", "41,5", "37,5", "38"]],['ADIDAS TENIS ADVANTAGE BAS','PumaFashionStore',85.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/zapatos-adidas-advantage-base-gw7120.jpg?v=1769311335", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/zapatos-adidas-advantage-base-gw7120_1.jpg?v=1769311335", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/zapatos-adidas-advantage-base-gw7120_2.jpg?v=1769311335"],["36"]],['ADIDAS TENIS HOOPS 3','PumaFashionStore',75.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/09GW21-1.webp?v=1769311257", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/09GW21-2.webp?v=1769311256", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/09GW21-3.webp?v=1769311257"],["42", "41,5"]],['ADIDAS TENIS ULTIMASHOW','PumaFashionStore',75.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/FX3636_3.jpg?v=1770062089", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/FX3636_4.jpg?v=1770062089", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/FX3636_5.jpg?v=1770062089", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/FX3636_1.jpg?v=1770062113", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/FX3636_2.jpg?v=1770062113"],["38,5", "36,5", "36", "37,5"]],['ADIDAS TENIS VS PACE','PumaFashionStore',70.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-vs-pace-eh0019-001_a1a10718-9fbf-42c0-a12d-97d5d9619382.webp?v=1769198452", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-vs-pace-eh0019-005.webp?v=1769198452", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-vs-pace-eh0019-002.webp?v=1769198453", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-vs-pace-eh0019-003.webp?v=1769198453", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-vs-pace-eh0019-004.webp?v=1769198452", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/adidas-vs-pace-eh0019-006.webp?v=1769198485"],["45,5"]],['HQ1471','ADIDAS',80.0,null,["https://cdn.shopify.com/s/files/1/0974/9489/2829/files/HQ1471_06_standard.avif?v=1769196923", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/HQ1471_09_standard.avif?v=1769196923", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/HQ1471_41_detail.avif?v=1769196923", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/HQ1471_42_detail.avif?v=1769196923", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/HQ1471_01_standard.avif?v=1769196923", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/HQ1471_02_standard_hover_949c43cd-0b24-470e-9ccf-846b1659e1ca.avif?v=1769196923", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/HQ1471_03_standard.avif?v=1769196923", "https://cdn.shopify.com/s/files/1/0974/9489/2829/files/HQ1471_04_standard.avif?v=1769196923"],["40", "40,5", "41,5", "42", "42,5", "43,5", "44", "44,5"]]];
+
+const WA='593983447591';
+const WSVG='<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.559 4.14 1.535 5.874L0 24l6.336-1.513A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.017-1.37l-.36-.214-3.727.977.999-3.634-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>';
+let shown=0;
+const INIT=10;
+
+function waUrl(t){return 'https://wa.me/'+WA+'?text='+encodeURIComponent('Hola, quiero este modelo de zapatillas: '+t);}
+// ── Modal helpers ──
+function openOrder(title, price){
+  document.getElementById('modalProductName').textContent = title;
+  document.getElementById('modalProductPrice').textContent = '$' + parseFloat(price).toFixed(0);
+  var form = document.getElementById('orderForm');
+  form.dataset.product = title;
+  form.dataset.price   = price;
+  form.reset();
+  document.getElementById('formError').textContent = '';
+  document.querySelectorAll('.om-input').forEach(function(i){ i.classList.remove('error'); });
+  document.getElementById('orderModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(function(){ var f=document.getElementById('oNombre'); if(f)f.focus(); }, 300);
+}
+function closeOrder(){
+  document.getElementById('orderModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Delegated click — works for dynamically created cards
+document.addEventListener('click', function(e){
+  var btn = e.target.closest('.btn-order');
+  if(btn){ e.preventDefault(); openOrder(btn.dataset.title, btn.dataset.price); }
+});
+function pct(p,c){return(c&&c>p)?Math.round((1-p/c)*100):null;}
+
+function makeCard(d,idx){
+  var title=d[0],vendor=d[1],price=d[2],comp=d[3],imgs=d[4],sizes=d[5];
+  var off=pct(price,comp);
+  var cid='c'+idx;
+  var imgHtml='';
+  if(!imgs||imgs.length===0){
+    imgHtml='<div class="pc-img-wrap"><div class="pc-no-img">\u{1F45F}</div></div>';
+  } else if(imgs.length===1){
+    imgHtml='<div class="pc-img-wrap"><img src="'+imgs[0]+'" alt="'+title+'" loading="lazy" class="pc-main-img"></div>';
+  } else {
+    var slides='';
+    for(var i=0;i<imgs.length;i++){
+      slides+='<div class="pc-slide'+(i===0?' active':'')+'">'
+        +'<img src="'+imgs[i]+'" alt="'+title+'" loading="'+(i===0?'eager':'lazy')+'" class="pc-main-img">'
+        +'</div>';
+    }
+    var dots='';
+    for(var j=0;j<imgs.length;j++){
+      dots+='<button class="pc-dot'+(j===0?' on':'')+'" onclick="goSlide(\''+cid+'\','+j+')" aria-label="Foto '+(j+1)+'"></button>';
+    }
+    imgHtml='<div class="pc-img-wrap" id="'+cid+'">'
+      +'<div class="pc-slides">'+slides+'</div>'
+      +'<button class="pc-arr pc-prev" onclick="prevSlide(\''+cid+'\')">\u2039</button>'
+      +'<button class="pc-arr pc-next" onclick="nextSlide(\''+cid+'\')">\u203a</button>'
+      +'<div class="pc-dots">'+dots+'</div>'
+      +'<div class="pc-count"><span class="pc-cur">1</span>/'+imgs.length+'</div>'
+      +'</div>';
+  }
+  var szHtml=sizes.length?sizes.map(function(s){return'<span class="size-chip">'+s+'</span>';}).join(''):'<span class="size-chip" style="opacity:.45">Consultar</span>';
+  var prHtml='<span class="price-current">$'+price.toFixed(0)+'</span>';
+  if(off){prHtml+='<span class="price-old">$'+comp.toFixed(0)+'</span><span class="price-save">-'+off+'%</span>';}
+  var badge=off?'<span class="product-badge badge-sale">\u{1F4A5} Oferta</span>':'<span class="product-badge badge-hot">\u{1F525} Stock</span>';
+  var thumbHtml='';
+  if(imgs&&imgs.length>1){
+    var thumbs='';
+    for(var k=0;k<imgs.length;k++){
+      thumbs+='<button class="pc-thumb'+(k===0?' on':'')+'" onclick="goSlide(\''+cid+'\','+k+')" style="background-image:url(\''+imgs[k]+'\')" aria-label="'+title+'"></button>';
+    }
+    thumbHtml='<div class="pc-thumbs">'+thumbs+'</div>';
+  }
+  return '<div class="product-card">'+badge+imgHtml+thumbHtml
+    +'<div class="product-info">'
+    +'<div class="product-brand">'+vendor+'</div>'
+    +'<div class="product-name">'+title+'</div>'
+    +'<div class="product-sizes">'+szHtml+'</div>'
+    +'<div class="product-price-row">'+prHtml+'</div>'
+    +'<button class="btn-wa-product btn-order" data-title="'+title.replace(/"/g,'&quot;')+'" data-price="'+price+'">'+WSVG+' PAGA EL ENVÍO · RESTO AL RECIBIR</button>'
+    +'</div></div>';
+}
+
+// ── Carousel logic ──
+function getState(cid){
+  var wrap=document.getElementById(cid);
+  if(!wrap)return null;
+  var slides=wrap.querySelectorAll('.pc-slide');
+  var cur=0;
+  slides.forEach(function(s,i){if(s.classList.contains('active'))cur=i;});
+  return{wrap:wrap,slides:slides,cur:cur};
+}
+function goSlide(cid,idx){
+  var s=getState(cid);if(!s)return;
+  s.slides.forEach(function(sl){sl.classList.remove('active');});
+  s.slides[idx].classList.add('active');
+  // dots
+  var dots=s.wrap.querySelectorAll('.pc-dot');
+  dots.forEach(function(d){d.classList.remove('on');});
+  if(dots[idx])dots[idx].classList.add('on');
+  // thumbs (outside wrap, in card)
+  var card=s.wrap.closest('.product-card');
+  if(card){
+    var thumbs=card.querySelectorAll('.pc-thumb');
+    thumbs.forEach(function(th){th.classList.remove('on');});
+    if(thumbs[idx])thumbs[idx].classList.add('on');
+  }
+  // counter
+  var cur=s.wrap.querySelector('.pc-cur');
+  if(cur)cur.textContent=idx+1;
+}
+function nextSlide(cid){
+  var s=getState(cid);if(!s)return;
+  goSlide(cid,(s.cur+1)%s.slides.length);
+}
+function prevSlide(cid){
+  var s=getState(cid);if(!s)return;
+  goSlide(cid,(s.cur-1+s.slides.length)%s.slides.length);
+}
+
+function renderProducts(from,to){
+  var grid=document.getElementById('productsGrid');
+  for(var i=from;i<to&&i<AP.length;i++){
+    var el=document.createElement('div');
+    el.innerHTML=makeCard(AP[i],i);
+    var card=el.firstChild;
+    card.style.opacity='0';card.style.transform='translateY(28px)';
+    card.style.transition='opacity .4s ease, transform .4s ease';
+    grid.appendChild(card);
+    (function(c){setTimeout(function(){c.style.opacity='1';c.style.transform='translateY(0)';},40);})(card);
+  }
+  shown=to>AP.length?AP.length:to;
+}
+
+function loadMore(){
+  var btn=document.getElementById('btnLoadMore');
+  var txt=document.getElementById('btnLoadMoreText');
+  btn.disabled=true;txt.textContent='Cargando productos...';
+  setTimeout(function(){
+    renderProducts(shown,AP.length);
+    document.getElementById('loadMoreWrap').style.display='none';
+  },350);
+}
+
+// Execute immediately since script is at bottom of section - DOM is already ready
+(function init(){
+  var grid=document.getElementById('productsGrid');
+  if(grid){renderProducts(0,INIT);}
+  else{document.addEventListener('DOMContentLoaded',function(){renderProducts(0,INIT);});}
+})();
+</script>
+
+<!-- BENEFITS -->
+<section id="beneficios">
+  <div class="section-header">
+    <span class="section-eyebrow">¿Por qué elegirnos?</span>
+    <h2 class="section-title">COMPRA CON CONFIANZA</h2>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-item">
+      <span class="benefit-icon">✅</span>
+      <div class="benefit-title">100% Original</div>
+      <div class="benefit-desc">Productos garantizados. Sin imitaciones, sin sorpresas.</div>
+    </div>
+    <div class="benefit-item">
+      <span class="benefit-icon">🚚</span>
+      <div class="benefit-title">Envíos a todo Ecuador</div>
+      <div class="benefit-desc">Guayaquil, Quito, Cuenca y más ciudades. Rápido y seguro.</div>
+    </div>
+    <div class="benefit-item">
+      <span class="benefit-icon">💰</span>
+      <div class="benefit-title">Pago contra entrega</div>
+      <div class="benefit-desc">Pagas cuando recibes. Cero riesgos para ti.</div>
+    </div>
+    <div class="benefit-item">
+      <span class="benefit-icon">⚡</span>
+      <div class="benefit-title">Entregas rápidas</div>
+      <div class="benefit-desc">En Guayaquil: mismo día. Nacional: 24–48 horas.</div>
+    </div>
+    <div class="benefit-item">
+      <span class="benefit-icon">🔥</span>
+      <div class="benefit-title">Stock limitado</div>
+      <div class="benefit-desc">Modelos exclusivos en cantidades limitadas. ¡Pide ya!</div>
+    </div>
+    <div class="benefit-item">
+      <span class="benefit-icon">💬</span>
+      <div class="benefit-title">Atención directa</div>
+      <div class="benefit-desc">Resolvemos tus dudas al instante por WhatsApp.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMOTIONS -->
+<section id="promociones">
+  <div class="section-header">
+    <span class="section-eyebrow">Ofertas activas</span>
+    <h2 class="section-title">PROMOCIONES 🔥</h2>
+    <p class="section-sub">Tiempo limitado — ¡Aprovecha antes que se agoten!</p>
+  </div>
+
+  <div class="promos-grid">
+    <div class="promo-card promo-red">
+      <span class="promo-emoji">👟</span>
+      <div>
+        <div class="promo-tag tag-red">⏳ Por tiempo limitado</div>
+        <div class="promo-title">2X1 EN<br>MODELOS PUMA</div>
+        <div class="promo-desc">Lleva 2 pares de la línea Puma Suede y paga solo el más caro. ¡Solo esta semana!</div>
+      </div>
+      <a href="https://wa.me/593983447591?text=Hola%2C%20quiero%20aprovechar%20la%20promo%202x1%20en%20Puma" target="_blank" class="btn-promo btn-promo-red">Quiero esta promo →</a>
+    </div>
+
+    <div class="promo-card promo-dark">
+      <span class="promo-emoji">🚚</span>
+      <div>
+        <div class="promo-tag tag-white">🚚 Envío gratis</div>
+        <div class="promo-title">ENVÍO GRATIS<br>+$80 DE COMPRA</div>
+        <div class="promo-desc">En pedidos desde $80 el envío es completamente gratis a todo Ecuador.</div>
+      </div>
+      <a href="https://wa.me/593983447591?text=Hola%2C%20quiero%20hacer%20un%20pedido%20con%20env%C3%ADo%20gratis" target="_blank" class="btn-promo btn-promo-white">Pedir ahora →</a>
+    </div>
+
+    <div class="promo-card promo-gold">
+      <span class="promo-emoji">💥</span>
+      <div>
+        <div class="promo-tag tag-gold">💥 Combo especial</div>
+        <div class="promo-title">COMBO:<br>2 PARES $150</div>
+        <div class="promo-desc">Arma tu combo con cualquier 2 modelos de nuestra colección estándar. ¡Ahorra hasta $60!</div>
+      </div>
+      <a href="https://wa.me/593983447591?text=Hola%2C%20quiero%20el%20combo%20de%202%20pares%20por%20%24150" target="_blank" class="btn-promo btn-promo-gold">Ver combo →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonios">
+  <div class="section-header">
+    <span class="section-eyebrow">Prueba social</span>
+    <h2 class="section-title">LO QUE DICEN NUESTROS CLIENTES</h2>
+    <p class="section-sub">+500 clientes satisfechos en todo Ecuador</p>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"Me llegaron en perfectas condiciones y en solo 24 horas. Las Puma son exactamente como en las fotos, 100% originales. Ya pedí el segundo par 🔥"</p>
+      <div class="t-author">
+        <div class="t-avatar">KR</div>
+        <div>
+          <div class="t-name">Karen Rodríguez</div>
+          <div class="t-location">📍 Guayaquil, Ecuador</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"Excelente atención, me ayudaron a elegir la talla correcta y el pago contra entrega me dio mucha confianza. Las Nike Air Max llegaron en 2 días a Quito."</p>
+      <div class="t-author">
+        <div class="t-avatar">DM</div>
+        <div>
+          <div class="t-name">Diego Morales</div>
+          <div class="t-location">📍 Quito, Ecuador</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"Pedí las Adidas Stan Smith para mi hijo y quedó enamorado. El proceso fue súper fácil por WhatsApp y el precio imbatible. ¡100% recomendado!"</p>
+      <div class="t-author">
+        <div class="t-avatar">LP</div>
+        <div>
+          <div class="t-name">Lucía Ponce</div>
+          <div class="t-location">📍 Cuenca, Ecuador</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"Ya llevo 3 pedidos y siempre todo perfecto. El combo de 2 pares es increíble, me ahorré un montón. Son los mejores de Ecuador sin duda 💯"</p>
+      <div class="t-author">
+        <div class="t-avatar">AS</div>
+        <div>
+          <div class="t-name">Andrés Salazar</div>
+          <div class="t-location">📍 Manta, Ecuador</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"Súper rápidos respondiendo, me mandaron fotos del producto real antes de confirmar. Las zapatillas llegaron bien empacadas. Muy profesionales."</p>
+      <div class="t-author">
+        <div class="t-avatar">VT</div>
+        <div>
+          <div class="t-name">Valeria Torres</div>
+          <div class="t-location">📍 Ambato, Ecuador</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"Aprovechamos el 2x1 de Puma con mi pareja y fue increíble. Trato personalizado, responden al instante y el envío fue rápido. ¡Gracias StepUp!"</p>
+      <div class="t-author">
+        <div class="t-avatar">JC</div>
+        <div>
+          <div class="t-name">José Castro</div>
+          <div class="t-location">📍 Loja, Ecuador</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="contacto">
+  <div class="cta-glow"></div>
+  <div class="cta-content">
+    <h2 class="cta-title">
+      NO TE QUEDES<br>SIN TU PAR
+      <span class="fire"> 🔥</span>
+    </h2>
+    <p class="cta-sub">El stock se acaba rápido. Escríbenos ahora y asegura tu modelo favorito antes de que alguien más lo lleve.</p>
+    <a href="https://wa.me/593983447591?text=Hola%2C%20quiero%20ver%20el%20cat%C3%A1logo%20de%20zapatillas" target="_blank" class="btn-wa-final">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.559 4.14 1.535 5.874L0 24l6.336-1.513A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.017-1.37l-.36-.214-3.727.977.999-3.634-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
+      ESCRIBIR POR WHATSAPP
+    </a>
+    <div class="cta-urgency">🔴 Stock actualizándose — Quedan pocas unidades</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="#hero" class="footer-logo">PUMA <span>FASHION</span> STORE</a>
+      <p class="footer-desc">Tu tienda de calzado deportivo y urbano original en Ecuador. Calidad, variedad y estilo con envío a todo el país.</p>
+      <div class="social-links">
+        <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+        <a href="#" class="social-btn" aria-label="TikTok">🎵</a>
+        <a href="#" class="social-btn" aria-label="Facebook">📘</a>
+        <a href="https://wa.me/593983447591" target="_blank" class="social-btn" aria-label="WhatsApp">💬</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Navegación</div>
+      <ul class="footer-links">
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#promociones">Promociones</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#testimonios">Reseñas</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Contacto</div>
+      <ul class="footer-links">
+        <li><a href="https://wa.me/593983447591" target="_blank">📱 +593 98 344 7591</a></li>
+        <li><a href="#">📍 Guayaquil, Ecuador</a></li>
+        <li><a href="#">🕐 Lun–Sáb: 9am–8pm</a></li>
+        <li><a href="#">📦 Envíos nacionales</a></li>
+      </ul>
+      <br>
+      <a href="https://wa.me/593983447591?text=Hola%2C%20quiero%20ver%20el%20cat%C3%A1logo" target="_blank" class="footer-wa">
+        💬 Escribir al WhatsApp
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Puma Fashion Store — Todos los derechos reservados. Guayaquil, Ecuador.</span>
+    <span class="footer-copy">Calidad, Variedad y Estilo ✨</span>
+  </div>
+</footer>
+
+<script>
+  function toggleNav() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('open');
+  }
+
+  // Close mobile nav on link click
+  document.querySelectorAll('#mobileNav a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('mobileNav').classList.remove('open');
+    });
+  });
+
+  // Header scroll effect
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+      header.style.borderBottomColor = 'rgba(0,194,178,0.5)';
+    } else {
+      header.style.borderBottomColor = 'rgba(0,194,178,0.3)';
+    }
+  });
+
+  // Intersection Observer for fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.benefit-item, .promo-card, .testimonial-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+<!-- ═══════════════ ORDER MODAL ═══════════════ -->
+<div id="orderModal" class="om-overlay" onclick="if(event.target===this)closeOrder()">
+  <div class="om-box">
+
+    <!-- Header -->
+    <div class="om-header">
+      <div>
+        <div class="om-eyebrow">📦 Confirmar pedido</div>
+        <div class="om-product-name" id="modalProductName"></div>
+        <div class="om-product-price" id="modalProductPrice"></div>
+      </div>
+      <button class="om-close" onclick="closeOrder()" aria-label="Cerrar">✕</button>
+    </div>
+
+    <!-- Payment notice -->
+    <div class="om-notice">
+      <span class="om-notice-icon">💳</span>
+      <div>
+        <div class="om-notice-title">Paga el envío · Resto al recibir</div>
+        <div class="om-notice-sub">Solo pagas el costo de envío por adelantado. El valor del producto lo pagas cuando recibes tu pedido.</div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <form id="orderForm" onsubmit="submitOrder(event)" autocomplete="on">
+
+      <!-- Nombres -->
+      <div class="om-row two-col">
+        <div class="om-field">
+          <label class="om-label" for="oNombre">Nombre <span class="req">*</span></label>
+          <input class="om-input" id="oNombre" type="text" placeholder="Tu nombre" required maxlength="40" autocomplete="given-name">
+        </div>
+        <div class="om-field">
+          <label class="om-label" for="oApellido">Apellido <span class="req">*</span></label>
+          <input class="om-input" id="oApellido" type="text" placeholder="Tu apellido" required maxlength="40" autocomplete="family-name">
+        </div>
+      </div>
+
+      <!-- Cédula -->
+      <div class="om-row">
+        <div class="om-field">
+          <label class="om-label" for="oCedula">Cédula / ID <span class="req">*</span></label>
+          <input class="om-input" id="oCedula" type="text" placeholder="0912345678" required maxlength="13" pattern="[0-9]{8,13}" inputmode="numeric" autocomplete="off">
+        </div>
+      </div>
+
+      <!-- Teléfono -->
+      <div class="om-row">
+        <div class="om-field">
+          <label class="om-label" for="oTelefono">Número de teléfono <span class="req">*</span></label>
+          <div class="om-phone-wrap">
+            <span class="om-flag">🇪🇨 +593</span>
+            <input class="om-input om-phone-input" id="oTelefono" type="tel" placeholder="98 344 7591" required maxlength="12" pattern="[0-9 ]{7,12}" inputmode="tel" autocomplete="tel">
+          </div>
+        </div>
+      </div>
+
+      <!-- Dirección -->
+      <div class="om-row">
+        <div class="om-field">
+          <label class="om-label" for="oDireccion">Dirección de entrega <span class="req">*</span></label>
+          <input class="om-input" id="oDireccion" type="text" placeholder="Calle, número, sector, referencia" required maxlength="120" autocomplete="street-address">
+        </div>
+      </div>
+
+      <!-- Ciudad -->
+      <div class="om-row">
+        <div class="om-field">
+          <label class="om-label" for="oCiudad">Ciudad <span class="req">*</span></label>
+          <select class="om-input om-select" id="oCiudad" required>
+            <option value="">Selecciona tu ciudad...</option>
+            <option>Guayaquil</option>
+            <option>Quito</option>
+            <option>Cuenca</option>
+            <option>Manta</option>
+            <option>Ambato</option>
+            <option>Portoviejo</option>
+            <option>Machala</option>
+            <option>Esmeraldas</option>
+            <option>Riobamba</option>
+            <option>Loja</option>
+            <option>Ibarra</option>
+            <option>Santo Domingo</option>
+            <option>Otra ciudad</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Error msg -->
+      <div id="formError" class="om-error"></div>
+
+      <!-- Submit -->
+      <button type="submit" class="om-submit">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.559 4.14 1.535 5.874L0 24l6.336-1.513A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.017-1.37l-.36-.214-3.727.977.999-3.634-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
+        ENVIAR PEDIDO POR WHATSAPP
+      </button>
+
+      <p class="om-footer-note">Al enviar confirmas que tus datos son correctos. Te contactaremos para coordinar el envío.</p>
+    </form>
+
+  </div>
+</div>
+
+<style>
+/* ═══ MODAL OVERLAY ═══ */
+.om-overlay {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 1rem;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.28s ease;
+}
+.om-overlay.open { opacity: 1; pointer-events: all; }
+
+.om-box {
+  background: #0f1a19;
+  border: 1px solid rgba(0,194,178,0.25);
+  border-radius: 16px;
+  width: 100%; max-width: 520px;
+  max-height: 92vh; overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(0,194,178,0.1);
+  transform: translateY(24px) scale(0.97);
+  transition: transform 0.28s ease;
+  scrollbar-width: thin; scrollbar-color: var(--teal) transparent;
+}
+.om-overlay.open .om-box { transform: translateY(0) scale(1); }
+
+/* Header */
+.om-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  padding: 1.6rem 1.8rem 1.2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.om-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem;
+  font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 4px;
+}
+.om-product-name {
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem;
+  line-height: 1.05; color: var(--white); letter-spacing: 0.03em;
+}
+.om-product-price {
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem;
+  color: var(--teal); margin-top: 2px;
+}
+.om-close {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: var(--gray-light); width: 34px; height: 34px; border-radius: 8px;
+  cursor: pointer; font-size: 1rem; flex-shrink: 0; margin-left: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+.om-close:hover { background: rgba(232,0,28,0.15); color: #ff6b6b; }
+
+/* Payment notice */
+.om-notice {
+  display: flex; align-items: flex-start; gap: 12px;
+  margin: 1.2rem 1.8rem;
+  background: rgba(0,194,178,0.08);
+  border: 1px solid rgba(0,194,178,0.2);
+  border-radius: 10px; padding: 1rem 1.2rem;
+}
+.om-notice-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 1px; }
+.om-notice-title {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 1rem;
+  font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 3px;
+}
+.om-notice-sub { font-size: 0.82rem; color: var(--gray-light); line-height: 1.5; }
+
+/* Form rows */
+#orderForm { padding: 0 1.8rem 1.8rem; }
+.om-row { margin-bottom: 1rem; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.om-field { display: flex; flex-direction: column; gap: 5px; }
+.om-label {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem;
+  font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gray-light);
+}
+.req { color: var(--teal); }
+
+.om-input {
+  background: rgba(255,255,255,0.05);
+  border: 1.5px solid rgba(255,255,255,0.1);
+  border-radius: 8px; padding: 11px 14px;
+  color: var(--white); font-family: 'Barlow', sans-serif; font-size: 0.95rem;
+  outline: none; width: 100%;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.om-input::placeholder { color: #4a6060; }
+.om-input:focus {
+  border-color: var(--teal);
+  background: rgba(0,194,178,0.06);
+  box-shadow: 0 0 0 3px rgba(0,194,178,0.12);
+}
+.om-input.error { border-color: #ff5555; box-shadow: 0 0 0 3px rgba(255,85,85,0.12); }
+
+.om-select {
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2300c2b2' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center;
+  padding-right: 40px; cursor: pointer;
+}
+.om-select option { background: #0f1a19; color: var(--white); }
+
+.om-phone-wrap {
+  display: flex; align-items: center;
+  background: rgba(255,255,255,0.05);
+  border: 1.5px solid rgba(255,255,255,0.1);
+  border-radius: 8px; overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.om-phone-wrap:focus-within {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(0,194,178,0.12);
+}
+.om-flag {
+  padding: 11px 12px; font-size: 0.88rem;
+  color: var(--teal); font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700; white-space: nowrap;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0,194,178,0.06);
+}
+.om-phone-input {
+  border: none !important; border-radius: 0 !important;
+  box-shadow: none !important; background: transparent !important;
+  flex: 1;
+}
+.om-phone-input:focus { box-shadow: none !important; }
+
+/* Error */
+.om-error {
+  color: #ff6b6b; font-size: 0.84rem; font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600; letter-spacing: 0.05em; min-height: 20px;
+  margin-bottom: 0.5rem;
+}
+
+/* Submit button */
+.om-submit {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; background: var(--wa-green); color: #fff;
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.35rem;
+  letter-spacing: 0.06em;
+  border: none; padding: 18px 24px; border-radius: 10px; cursor: pointer;
+  margin-top: 1.2rem;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 24px rgba(37,211,102,0.3);
+}
+.om-submit:hover { background: var(--wa-dark); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(37,211,102,0.45); }
+.om-submit:active { transform: scale(0.98); }
+
+.om-footer-note {
+  text-align: center; font-size: 0.76rem; color: #3a5555;
+  margin-top: 0.8rem; line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 540px) {
+  .om-box { border-radius: 14px 14px 0 0; max-height: 95vh; }
+  .om-overlay { align-items: flex-end; padding: 0; }
+  .two-col { grid-template-columns: 1fr; }
+  .om-header { padding: 1.3rem 1.4rem 1rem; }
+  #orderForm { padding: 0 1.4rem 1.4rem; }
+  .om-notice { margin: 1rem 1.4rem; }
+  .om-submit { font-size: 1.15rem; padding: 16px; }
+}
+</style>
+
+<script>
+function submitOrder(e){
+  e.preventDefault();
+  var form = document.getElementById('orderForm');
+  var err  = document.getElementById('formError');
+  err.textContent = '';
+
+  // Gather values
+  var nombre   = document.getElementById('oNombre').value.trim();
+  var apellido = document.getElementById('oApellido').value.trim();
+  var cedula   = document.getElementById('oCedula').value.trim();
+  var tel      = document.getElementById('oTelefono').value.trim();
+  var dir      = document.getElementById('oDireccion').value.trim();
+  var ciudad   = document.getElementById('oCiudad').value.trim();
+  var producto = form.dataset.product;
+  var precio   = parseFloat(form.dataset.price);
+
+  // Validate cedula (Ecuador 10 digits)
+  if(!/^[0-9]{8,13}$/.test(cedula)){
+    err.textContent = '⚠️ Ingresa una cédula válida (8-13 dígitos).';
+    document.getElementById('oCedula').classList.add('error');
+    document.getElementById('oCedula').focus();
+    return;
+  }
+  // Phone basic check
+  var telClean = tel.replace(/\s/g,'');
+  if(telClean.length < 7){
+    err.textContent = '⚠️ Ingresa un número de teléfono válido.';
+    document.getElementById('oTelefono').focus();
+    return;
+  }
+
+  // Build WhatsApp message
+  var msg =
+    '🛒 *NUEVO PEDIDO — PUMA FASHION STORE*\n\n' +
+    '👟 *Producto:* ' + producto + '\n' +
+    '💵 *Precio:* $' + precio.toFixed(0) + '\n\n' +
+    '━━━━━━━━━━━━━━━━\n' +
+    '👤 *DATOS DEL CLIENTE*\n' +
+    '━━━━━━━━━━━━━━━━\n' +
+    '🔹 Nombre: ' + nombre + ' ' + apellido + '\n' +
+    '🔹 Cédula: ' + cedula + '\n' +
+    '🔹 Teléfono: +593 ' + tel + '\n' +
+    '🔹 Dirección: ' + dir + '\n' +
+    '🔹 Ciudad: ' + ciudad + '\n\n' +
+    '━━━━━━━━━━━━━━━━\n' +
+    '💳 *FORMA DE PAGO*\n' +
+    'Pago del envío por adelantado.\n' +
+    'Resto del valor al momento de recibir.\n' +
+    '━━━━━━━━━━━━━━━━\n\n' +
+    '✅ Confirmo que mis datos son correctos y acepto las condiciones de entrega.';
+
+  var waLink = 'https://wa.me/593983447591?text=' + encodeURIComponent(msg);
+  window.open(waLink, '_blank');
+  closeOrder();
+}
+// Remove error class on input
+document.addEventListener('input', function(e){
+  if(e.target.classList.contains('om-input')){
+    e.target.classList.remove('error');
+    document.getElementById('formError').textContent='';
+  }
+});
+// Close modal on ESC
+document.addEventListener('keydown', function(e){
+  if(e.key==='Escape') closeOrder();
+});
+</script>
+</body>
+</html>
