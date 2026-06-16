@@ -852,16 +852,44 @@ let currentProduct = null;
 let selectedSize = null;
 
 /* ── FILTROS ── */
-function getBrand(p){return (p.Title+' '+p.Vendor).toLowerCase();}
+/* El campo "Vendor" siempre es "PUMA FASHION STORE" (nombre de la tienda),
+   por eso NO sirve para filtrar por marca. La marca real se detecta a partir
+   del Handle + Title con un diccionario de palabras clave. */
+const BRAND_RULES = [
+  ['nike',        ['nike','jordan']],
+  ['adidas',      ['adidas']],
+  ['new balance', ['new-balance','new balance']],
+  ['converse',    ['converse']],
+  ['skechers',    ['skechers']],
+  ['balmain',     ['balmain']],
+  ['valentino',   ['valentino']],
+  ['palladium',   ['palladium']],
+  ['asics',       ['asics']],
+  ['and1',        ['and1']],
+  ['brunello',    ['brunello']],
+  // PUMA y sus líneas / colaboraciones (sus títulos no siempre dicen "puma")
+  ['puma',        ['puma','future-rider','gravition','rebound','anzarun','bmw-mms',
+                   'ferrari','softride','carina','jada','rbd-game','suede','clyde',
+                   'palermo','speedcat','mayze','cali','smash','rs-x','slipstream']],
+];
+function detectBrand(p){
+  const s = ((p.Handle||'') + ' ' + (p.Title||'')).toLowerCase();
+  for(const [brand, kws] of BRAND_RULES){
+    if(kws.some(k => s.includes(k))) return brand;
+  }
+  return 'otros';
+}
+// Asignar la marca real una sola vez a cada producto
+PRODUCTS.forEach(p => { p.Brand = detectBrand(p); });
 
 function applyFilters(){
   let arr = [...PRODUCTS];
   if(activeSearch){
     const q = activeSearch.toLowerCase();
-    arr = arr.filter(p => getBrand(p).includes(q) || p.Title.toLowerCase().includes(q));
+    arr = arr.filter(p => p.Title.toLowerCase().includes(q) || p.Brand.includes(q));
   }
   if(activeFilter !== 'all'){
-    arr = arr.filter(p => getBrand(p).includes(activeFilter));
+    arr = arr.filter(p => p.Brand === activeFilter);
   }
   if(activeSort === 'price-asc') arr.sort((a,b)=>parseFloat(a.Price)-parseFloat(b.Price));
   else if(activeSort === 'price-desc') arr.sort((a,b)=>parseFloat(b.Price)-parseFloat(a.Price));
