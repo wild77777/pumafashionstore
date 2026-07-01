@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#090c0c"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="#00c2b2" stroke-width="1.5" opacity=".5"/>
+  <!-- asa -->
+  <path d="M24 26 v-4 a8 8 0 0 1 16 0 v4" fill="none" stroke="#00c2b2" stroke-width="3.4" stroke-linecap="round"/>
+  <!-- cuerpo de la bolsa -->
+  <path d="M18 26 h28 l3 24 a2 2 0 0 1 -2 2 H17 a2 2 0 0 1 -2 -2 Z" fill="none" stroke="#f2fafa" stroke-width="3.4" stroke-linejoin="round"/>
+  <!-- remaches del asa -->
+  <circle cx="24" cy="27" r="2.4" fill="#00c2b2"/>
+  <circle cx="40" cy="27" r="2.4" fill="#00c2b2"/>
+</svg>
