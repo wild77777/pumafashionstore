@@ -448,7 +448,7 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.06);padding:2.5
     <p class="section-sub" style="margin:.5rem auto 0">199 modelos originales — Haz clic en cualquier producto para ver tallas y hacer tu pedido.</p>
   </div>
   <div class="toolbar">
-    <div class="search-wrap"><input type="text" id="searchInput" placeholder="Buscar productos..."></div>
+    <div class="search-wrap"><input type="text" id="searchInput" placeholder="Buscar por modelo o talla (ej: 36)..."></div>
     <div class="filter-btns">
       <button class="filter-btn active" data-filter="all">Todos</button>
       <button class="filter-btn" data-filter="balmain">BALMAIN</button>
@@ -882,11 +882,26 @@ function detectBrand(p){
 // Asignar la marca real una sola vez a cada producto
 PRODUCTS.forEach(p => { p.Brand = detectBrand(p); });
 
+/* Normaliza una talla a punto decimal: "36,5" / "36-5" -> "36.5" */
+function normSize(s){ return String(s).trim().replace(/[,\-]/g, '.'); }
+
+/* Coincidencia de búsqueda: por texto (modelo/marca) o por talla exacta.
+   Si el usuario escribe un número de talla (ej "36", "36.5", "36,5"),
+   se busca esa talla EXACTA para que "36" no traiga también "36.5". */
+function matchesSearch(p, q){
+  const byText = p.Title.toLowerCase().includes(q) || p.Brand.includes(q);
+  const qSize = normSize(q);
+  const bySize = /^\d{1,2}(\.\d)?$/.test(qSize)
+    && Array.isArray(p.Sizes)
+    && p.Sizes.some(s => normSize(s.size) === qSize);
+  return byText || bySize;
+}
+
 function applyFilters(){
   let arr = [...PRODUCTS];
   if(activeSearch){
     const q = activeSearch.toLowerCase();
-    arr = arr.filter(p => p.Title.toLowerCase().includes(q) || p.Brand.includes(q));
+    arr = arr.filter(p => matchesSearch(p, q));
   }
   if(activeFilter !== 'all'){
     arr = arr.filter(p => p.Brand === activeFilter);
