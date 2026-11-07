@@ -1074,6 +1074,74 @@ html[data-theme="dark"] .size-chip-sm.size-match{background:#1e5748;border-color
   .size-quick-actions{flex-wrap:nowrap;width:100%;overflow-x:auto;padding-bottom:3px;scrollbar-width:thin}
   .size-shortcut{flex:0 0 auto}
 }
+
+/* ═══ PAGO FLEXIBLE: dos métodos al hacer el pedido ═══ */
+.modal-pay-hint{display:flex;gap:8px;align-items:center;background:#f0faf6;color:#206d55;
+  border:1px solid #d8ece1;border-radius:12px;font-size:.79rem;font-weight:650;line-height:1.5;
+  padding:12px 14px;margin:8px 0 18px}
+.modal-pay-hint>span{font-weight:900;color:#168a62}
+.payment-method-heading{font-size:.94rem;font-weight:800;letter-spacing:-.015em;
+  color:#1b3328;margin:0 0 12px}
+.payment-choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.payment-choice{position:relative;min-height:129px;text-align:left;cursor:pointer;
+  display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:8px;
+  padding:17px 13px 13px;background:#fff;border:1.5px solid #dce6e0;
+  border-radius:13px;font-family:'DM Sans',sans-serif;color:#263f32;transition:.2s}
+.payment-choice:hover,.payment-choice:focus-visible{border-color:#57ae92;background:#f8fcfa;outline:none}
+.payment-choice.chosen{background:#eaf8f1;border:2px solid #17a377;padding:16.5px 12.5px 12.5px;
+  box-shadow:0 0 0 3px rgba(32,172,121,.11)}
+.payment-choice-top{display:flex;align-items:center;gap:7px;width:100%}
+.payment-choice-top strong{font-size:.85rem;line-height:1.2;letter-spacing:-.015em;flex:1}
+.payment-choice-icon{font-size:1.22rem;line-height:1}
+.payment-choice-radio{border:1.5px solid #bacfc2;width:17px;height:17px;flex:0 0 17px;
+  border-radius:50%;display:inline-flex;align-items:center;justify-content:center}
+.payment-choice.chosen .payment-choice-radio{border-color:#168a62;background:#168a62}
+.payment-choice.chosen .payment-choice-radio::after{content:'✓';color:#fff;font-size:11px;font-weight:800}
+.payment-choice-explain{font-size:.71rem;line-height:1.5;color:#687d70}
+.payment-choice-offer{position:absolute;top:-10px;right:10px;background:#157d58;color:#fff;
+  padding:4px 9px;border-radius:100px;letter-spacing:.025em;font-size:.56rem;font-weight:800}
+.payment-choice-helper{color:#5c7666;font-size:.76rem;margin:0 0 10px;min-height:18px}
+.payment-summary{padding:15px;border:1px solid #cce7d9;border-radius:13px;background:#f0faf4;
+  color:#234638;margin-bottom:16px}
+.payment-summary>strong{font-size:.91rem;line-height:1.4;display:block;color:#12724f}
+.payment-summary>p{font-size:.8rem;line-height:1.65;margin:6px 0 12px;color:#375b4a}
+.payment-summary>small{display:block;margin-top:11px;font-size:.67rem;line-height:1.5;color:#667b6e}
+.payment-breakdown{border-top:1px solid #d1e6d9;padding-top:7px}
+.payment-breakdown>div{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:5px 0;font-size:.76rem}
+.payment-breakdown>div>span{color:#577163}
+.payment-breakdown>div strong{white-space:nowrap;color:#254a39}
+.payment-breakdown .payment-total{border-top:1px solid #ccdfd3;margin-top:5px;padding:11px 0 6px;font-size:.91rem;font-weight:800}
+.payment-breakdown .payment-total>span,.payment-breakdown .payment-total strong{color:#117450}
+.payment-breakdown .payment-shipping{font-size:.72rem}
+#customerDetails .form-section-title{margin-top:5px}
+.wa-order-fallback{display:inline-flex;background:#168a62;color:#fff;text-decoration:none;
+  padding:11px 18px;margin-top:7px;border-radius:9px;font-size:.79rem;font-weight:750}
+[hidden]{display:none!important}
+html[data-theme="dark"] .modal-pay-hint{background:#183b31;border-color:#3b6654;color:#ace6c6}
+html[data-theme="dark"] .payment-method-heading{color:#f0f8f3}
+html[data-theme="dark"] .payment-choice{background:#203236;border-color:#425b57;color:#ecf8f1}
+html[data-theme="dark"] .payment-choice:hover{background:#25413d;border-color:#61b29a}
+html[data-theme="dark"] .payment-choice.chosen{background:#1c483c;border-color:#64cfa6;box-shadow:0 0 0 3px rgba(103,213,166,.12)}
+html[data-theme="dark"] .payment-choice-explain{color:#bad0c3}
+html[data-theme="dark"] .payment-choice-radio{border-color:#8fa89c}
+html[data-theme="dark"] .payment-choice-helper{color:#b1c8b9}
+html[data-theme="dark"] .payment-summary{background:#193a2e;border-color:#376951;color:#e3f7ea}
+html[data-theme="dark"] .payment-summary>strong{color:#96e9b8}
+html[data-theme="dark"] .payment-summary>p{color:#d0e6d8}
+html[data-theme="dark"] .payment-summary>small{color:#a9cbb7}
+html[data-theme="dark"] .payment-breakdown{border-color:#37614f}
+html[data-theme="dark"] .payment-breakdown>div>span{color:#b5d2c0}
+html[data-theme="dark"] .payment-breakdown>div strong{color:#e5f8eb}
+html[data-theme="dark"] .payment-breakdown .payment-total{border-color:#37614f}
+html[data-theme="dark"] .payment-breakdown .payment-total>span,
+html[data-theme="dark"] .payment-breakdown .payment-total strong{color:#8ce4b3}
+@media(max-width:480px){
+  .payment-choice-grid{grid-template-columns:1fr;gap:13px;margin-top:2px}
+  .payment-choice{min-height:90px;padding:14px 13px}
+  .payment-choice.chosen{padding:13.5px 12.5px}
+  .payment-choice-offer{font-size:.55rem}
+}
+
 </style>
 </head>
 <body>
@@ -1119,7 +1187,7 @@ html[data-theme="dark"] .size-chip-sm.size-match{background:#1e5748;border-color
         <a class="btn-primary" href="#favoritos">VER BALMAIN <span aria-hidden="true">→</span></a>
         <a class="btn-outline" href="#catalogo">VER TODO EL CALZADO</a>
       </div>
-      <p class="commerce-microcopy">Pide por WhatsApp · Paga el calzado al recibir</p>
+      <p class="commerce-microcopy">Pide por WhatsApp · Contra entrega o 5% menos anticipado</p>
     </div>
     <button class="commerce-hero-image" id="heroBalmainProduct" type="button" aria-label="Ver detalles y tallas de BALMAIN WHITTE 2">
       <span class="commerce-image-label">NUESTRA SELECCIÓN</span>
@@ -1130,7 +1198,7 @@ html[data-theme="dark"] .size-chip-sm.size-match{background:#1e5748;border-color
 </section>
 <div class="trust-bar" aria-label="Beneficios de compra">
   <span><span aria-hidden="true">✓</span> Pago del calzado al recibir</span>
-  <span><span aria-hidden="true">✓</span> Solo el envío por adelantado</span>
+  <span><span aria-hidden="true">✓</span> Dos opciones de pago</span>
   <span><span aria-hidden="true">✓</span> Envíos a todo Ecuador</span>
 </div>
 <section class="featured-section" id="favoritos" aria-labelledby="featured-title">
@@ -1200,9 +1268,9 @@ html[data-theme="dark"] .size-chip-sm.size-match{background:#1e5748;border-color
 </section>
 <section id="como-funciona" class="section-pago">
   <div class="pago-inner">
-    <div class="pago-tag">✅ Sin riesgo · Solo pagas el envío al inicio</div>
-    <h2 class="pago-title">PAGA EL CALZADO<br>CUANDO LO <span class="highlight">RECIBAS EN CASA</span></h2>
-    <p class="pago-sub">En Puma Fashion Store trabajamos diferente: <strong>no te pedimos que confíes a ciegas</strong>. Tú primero ves el producto, lo revisas, confirmas que es lo que querías — y solo entonces pagas el calzado. Lo único que cubres antes es el costo del envío para que tu pedido llegue.</p>
+    <div class="pago-tag">✓ Tú eliges · Contra entrega o pago anticipado</div>
+    <h2 class="pago-title">COMPRA COMO PREFIERAS<br><span class="highlight">DOS FORMAS DE PAGO</span></h2>
+    <p class="pago-sub">Elige <strong>pagar el calzado al recibirlo</strong> (anticipando solo el envío) o <strong>pagar por adelantado y ahorrar 5%</strong> en el precio del calzado. El costo del envío se confirma por WhatsApp.</p>
     <div class="pago-steps">
       <div class="pago-step">
         <div class="step-circle">01</div>
@@ -1213,8 +1281,8 @@ html[data-theme="dark"] .size-chip-sm.size-match{background:#1e5748;border-color
       <div class="pago-step">
         <div class="step-circle">02</div>
         <div class="step-icon-txt">🚚</div>
-        <div class="step-title">Solo pagas el envío</div>
-        <div class="step-desc">Anticipas <strong>únicamente el costo de envío</strong>. El calzado no te cuesta nada todavía.</div>
+        <div class="step-title">Elige cómo pagar</div>
+        <div class="step-desc"><strong>Contra entrega:</strong> anticipas el envío. <strong>Anticipado:</strong> obtienes 5% menos en el calzado.</div>
       </div>
       <div class="pago-step">
         <div class="step-circle">03</div>
@@ -1225,15 +1293,15 @@ html[data-theme="dark"] .size-chip-sm.size-match{background:#1e5748;border-color
       <div class="pago-step">
         <div class="step-circle">04</div>
         <div class="step-icon-txt">✅</div>
-        <div class="step-title">Revisas y pagas</div>
-        <div class="step-desc">Abres, revisas, confirmas que está perfecto — <strong>y en ese momento pagas el calzado</strong>.</div>
+        <div class="step-title">Recibes tu pedido</div>
+        <div class="step-desc">Con contra entrega, pagas el calzado al recibirlo. Si anticipaste, ya obtuviste el descuento.</div>
       </div>
     </div>
     <div class="pago-alert">
       <div class="pago-alert-icon">🛡️</div>
       <div class="pago-alert-body">
         <strong>¿Y si el producto no te convence al recibirlo?</strong>
-        <em>No pagas el calzado.</em> Solo el costo de envío ya fue cubierto. Así de simple, sin letra pequeña.
+        Con la opción contra entrega, <em>el calzado se paga al recibir.</em> El costo del envío se confirma antes del despacho.
       </div>
     </div>
     <a href="https://wa.me/593984031183?text=Hola%2C+quiero+hacer+un+pedido+con+pago+al+recibir" target="_blank" class="btn-pago">
@@ -1286,9 +1354,9 @@ html[data-theme="dark"] .size-chip-sm.size-match{background:#1e5748;border-color
   </div>
   <div class="faq-list">
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Los productos son realmente originales?</span><span class="faq-icon">+</span></div><div class="faq-a">Sí, absolutamente. Todos nuestros productos son 100% auténticos. No vendemos réplicas ni imitaciones. Si al recibirlos no estás conforme con su originalidad, no pagas el calzado.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Qué pago exactamente por adelantado?</span><span class="faq-icon">+</span></div><div class="faq-a">Solo pagas el costo del envío para que tu pedido llegue a tu puerta. El valor del calzado lo pagas únicamente cuando lo recibes, lo abres y confirmas que está perfecto. Nada más.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Puedo elegir cómo pagar?</span><span class="faq-icon">+</span></div><div class="faq-a">Sí. Puedes pagar contra entrega (anticipas únicamente el envío y pagas el calzado al recibirlo) o elegir pago anticipado para obtener 5% de descuento sobre el precio del calzado. Confirmamos el valor del envío y los datos de pago por WhatsApp.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Cuánto tiempo tarda el envío?</span><span class="faq-icon">+</span></div><div class="faq-a">En Guayaquil entregamos el mismo día o al día siguiente. Para el resto del Ecuador el plazo es de 24 a 48 horas hábiles dependiendo de la ciudad.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Qué pasa si el calzado no me convence al recibirlo?</span><span class="faq-icon">+</span></div><div class="faq-a">No pagas el calzado. Simple. Solo el envío ya fue cubierto. Si el producto no cumple tus expectativas, no tienes ninguna obligación de quedártelo ni de pagar su valor.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Qué pasa si el calzado no me convence al recibirlo?</span><span class="faq-icon">+</span></div><div class="faq-a">Si eliges contra entrega, revisas el calzado y pagas su valor al recibirlo. Para pagos anticipados, consulta por WhatsApp las condiciones de cambios o devoluciones antes de pagar.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Envían a toda ciudad de Ecuador?</span><span class="faq-icon">+</span></div><div class="faq-a">Sí. Enviamos a Guayaquil, Quito, Cuenca, Manta, Ambato, Loja, Machala, Portoviejo, Santo Domingo, Ibarra y cualquier otra ciudad del país.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Cómo hago mi pedido?</span><span class="faq-icon">+</span></div><div class="faq-a">Selecciona el modelo en el catálogo, haz clic para ver las tallas y completa el formulario. Tu pedido llega directo a nuestro WhatsApp y te confirmamos en minutos.</div></div>
   </div>
@@ -1303,11 +1371,11 @@ html[data-theme="dark"] .size-chip-sm.size-match{background:#1e5748;border-color
   <div class="garantia-box">
     <div class="garantia-icon">🛡️</div>
     <div class="garantia-title">TU DINERO SEGURO</div>
-    <p class="garantia-desc">En Puma Fashion Store no pagas el calzado hasta verlo y aprobarlo. Si no estás satisfecho con lo que recibes, no hay obligación. Llevamos años construyendo confianza con cada cliente.</p>
+    <p class="garantia-desc">Compra de la forma que prefieras: contra entrega, pagando el calzado al recibirlo, o pago anticipado con 5% de descuento en el calzado. Consulta las condiciones y el envío por WhatsApp antes de confirmar.</p>
     <div class="garantia-puntos">
-      <span class="garantia-punto">✅ Solo envío por adelantado</span>
+      <span class="garantia-punto">✅ Contra entrega o pago anticipado</span>
       <span class="garantia-punto">✅ Calzado original garantizado</span>
-      <span class="garantia-punto">✅ Pagas al recibir y aprobar</span>
+      <span class="garantia-punto">✅ Descuento del 5% al anticipar</span>
       <span class="garantia-punto">✅ Empaque seguro siempre</span>
     </div>
   </div>
@@ -1318,7 +1386,7 @@ html[data-theme="dark"] .size-chip-sm.size-match{background:#1e5748;border-color
   <div class="cta-glow"></div>
   <div class="cta-content">
     <h2 class="cta-title">NO TE QUEDES<br>SIN TU PAR<span class="fire"> 🔥</span></h2>
-    <p class="cta-sub">El stock se agota rápido. Escríbenos ahora, elige tu modelo y lo tienes en casa en menos de 48 horas — pagando el calzado solo cuando lo recibas.</p>
+    <p class="cta-sub">Elige tu modelo, talla y forma de pago. Pide por WhatsApp con contra entrega o ahorra 5% en el calzado al pagar por adelantado.</p>
     <a href="https://wa.me/593984031183?text=Hola%2C+quiero+hacer+un+pedido+en+Puma+Fashion+Store" target="_blank" class="btn-wa-final">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.559 4.14 1.535 5.874L0 24l6.336-1.513A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.017-1.37l-.36-.214-3.727.977.999-3.634-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
       ESCRÍBENOS POR WHATSAPP
@@ -1350,13 +1418,13 @@ html[data-theme="dark"] .size-chip-sm.size-match{background:#1e5748;border-color
         <li><a href="https://wa.me/593984031183" target="_blank">📱 +593 98 403 1183</a></li>
         <li><a href="#">📍 Guayaquil, Ecuador</a></li>
         <li><a href="#">📦 Envíos nacionales</a></li>
-        <li><a href="#">💳 Pago al recibir</a></li>
+        <li><a href="#como-funciona">💳 Elige cómo pagar</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <span class="footer-copy">© 2026 Puma Fashion Store — Guayaquil, Ecuador.</span>
-    <span class="footer-copy">Calzado Original · Paga al Recibir ✨</span>
+    <span class="footer-copy">Calzado Original · Dos formas de pago ✨</span>
   </div>
 </footer>
 
@@ -1381,14 +1449,7 @@ html[data-theme="dark"] .size-chip-sm.size-match{background:#1e5748;border-color
           <div class="modal-price-cur">USD</div>
         </div>
 
-        <!-- Badge pago -->
-        <div class="modal-pago-badge">
-          <div class="badge-icon">💳</div>
-          <div class="modal-pago-text">
-            <strong>Paga solo el envío ahora · Resto al recibir</strong>
-            <span>El calzado lo pagas cuando lo recibes y lo apruebas en tu puerta. Sin riesgos.</span>
-          </div>
-        </div>
+        <div class="modal-pay-hint"><span aria-hidden="true">✓</span> Compra a tu manera: paga al recibir o ahorra 5% con pago anticipado</div>
 
         <!-- Tallas -->
         <div class="sizes-label">Selecciona tu talla</div>
@@ -1396,8 +1457,33 @@ html[data-theme="dark"] .size-chip-sm.size-match{background:#1e5748;border-color
         <div class="size-info" id="sizeInfo">👆 Selecciona una talla para continuar</div>
         <hr class="divider">
 
-        <!-- Formulario -->
+        <!-- Modalidad de pago: seleccionar antes de ingresar los datos -->
         <div id="orderSection">
+          <div class="payment-method-heading">¿Cómo deseas pagar?</div>
+          <div class="payment-choice-grid" role="group" aria-label="Elige tu forma de pago">
+            <button type="button" class="payment-choice" id="payMethodCod" onclick="selectPaymentMethod('cod')" aria-pressed="false">
+              <span class="payment-choice-top"><span class="payment-choice-icon" aria-hidden="true">📦</span><strong>Contra entrega</strong><span class="payment-choice-radio" aria-hidden="true"></span></span>
+              <span class="payment-choice-explain">Solo adelantas el envío y pagas el calzado al recibirlo.</span>
+            </button>
+            <button type="button" class="payment-choice" id="payMethodPrepaid" onclick="selectPaymentMethod('prepaid')" aria-pressed="false">
+              <span class="payment-choice-offer">5% DE DESCUENTO</span>
+              <span class="payment-choice-top"><span class="payment-choice-icon" aria-hidden="true">💳</span><strong>Pago anticipado</strong><span class="payment-choice-radio" aria-hidden="true"></span></span>
+              <span class="payment-choice-explain">Pagas el calzado antes de enviarlo y ahorras un 5%.</span>
+            </button>
+          </div>
+          <p class="payment-choice-helper" id="paymentChoiceHelper">Selecciona tu talla y cómo deseas pagar.</p>
+          <div class="payment-summary" id="paymentSummary" hidden aria-live="polite">
+            <strong id="paymentSummaryTitle"></strong>
+            <p id="paymentSummaryMessage"></p>
+            <div class="payment-breakdown">
+              <div><span>Precio del calzado</span><strong id="paymentBasePrice"></strong></div>
+              <div id="paymentDiscountRow" hidden><span>Descuento (5%)</span><strong id="paymentDiscount"></strong></div>
+              <div class="payment-total"><span id="paymentTotalLabel"></span><strong id="paymentTotal"></strong></div>
+              <div class="payment-shipping"><span>Costo del envío</span><strong>Por confirmar</strong></div>
+            </div>
+            <small>El valor del envío y los datos para realizar el pago se confirman por WhatsApp antes de cobrar.</small>
+          </div>
+          <div id="customerDetails" hidden>
           <div class="form-section-title">📦 Datos para el envío</div>
           <div class="form-grid">
             <div class="fgroup"><label>Nombre *</label><input type="text" id="fNombre" placeholder="Tu nombre"></div>
@@ -1422,17 +1508,19 @@ html[data-theme="dark"] .size-chip-sm.size-match{background:#1e5748;border-color
           <button class="pay-btn-modal" id="payBtn" onclick="submitOrder()">
             <div class="pay-btn-main-text">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.559 4.14 1.535 5.874L0 24l6.336-1.513A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.017-1.37l-.36-.214-3.727.977.999-3.634-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
-              QUIERO PAGAR EN CASA
+              CONTINUAR POR WHATSAPP
             </div>
-            <div class="pay-btn-sub-text">🔒 pedidos 100% seguros · pago al recibir</div>
+            <div class="pay-btn-sub-text">Confirma el pedido y coordina el pago</div>
           </button>
-        </div>
+          </div> <!-- /customerDetails -->
+        </div> <!-- /orderSection -->
 
-        <!-- Éxito -->
+        <!-- WhatsApp: el cliente debe pulsar Enviar en la aplicación -->
         <div class="order-success" id="orderSuccess">
-          <div class="success-check">✅</div>
-          <div class="success-title">¡Pedido Enviado!</div>
-          <div class="success-body" id="successMsg">Te estamos redirigiendo a WhatsApp para confirmar tu pedido.</div>
+          <div class="success-check">💬</div>
+          <div class="success-title">Termina tu pedido en WhatsApp</div>
+          <div class="success-body" id="successMsg">Abre el chat y presiona Enviar para solicitar la confirmación de tu pedido.</div>
+          <a id="waOrderFallback" class="wa-order-fallback" href="#" target="_blank" rel="noopener noreferrer">Abrir WhatsApp otra vez</a>
         </div>
       </div>
     </div>
@@ -1650,6 +1738,7 @@ let activeSort = 'default';
 let activeSize = '';
 let currentProduct = null;
 let selectedSize = null;
+let selectedPaymentMethod = null;
 
 /* ── FILTROS ── */
 /* El campo "Vendor" siempre es "PUMA FASHION STORE" (nombre de la tienda),
@@ -1869,10 +1958,73 @@ function updateStats(arr){
   document.getElementById('maxPrice').textContent = '$'+Math.max(...prices).toFixed(0);
 }
 
+/* ── OPCIONES DE PAGO ── */
+function getSelectedShoePrice(){
+  if(!currentProduct) return 0;
+  const match = (currentProduct.Sizes || []).find(s => String(s.size) === String(selectedSize));
+  const price = Number(match ? match.price : currentProduct.Price);
+  return Number.isFinite(price) && price >= 0 ? price : 0;
+}
+function moneyUSD(amount){
+  const n = Math.round((Number(amount) + Number.EPSILON) * 100) / 100;
+  return '$' + n.toLocaleString('en-US', {minimumFractionDigits: n % 1 === 0 ? 0 : 2, maximumFractionDigits: 2});
+}
+function paymentAmounts(){
+  const base = Math.round((getSelectedShoePrice() + Number.EPSILON) * 100) / 100;
+  const discount = Math.round(base * 5) / 100;
+  return {base, discount, discounted: Math.round((base - discount) * 100) / 100};
+}
+function selectPaymentMethod(method){
+  if(method !== 'cod' && method !== 'prepaid') return;
+  selectedPaymentMethod = method;
+  updatePaymentSummary();
+}
+function updatePaymentSummary(){
+  const codBtn = document.getElementById('payMethodCod');
+  const prepaidBtn = document.getElementById('payMethodPrepaid');
+  [codBtn, prepaidBtn].forEach(btn => {
+    const active = btn.id === (selectedPaymentMethod === 'cod' ? 'payMethodCod' : 'payMethodPrepaid');
+    btn.classList.toggle('chosen', Boolean(selectedPaymentMethod) && active);
+    btn.setAttribute('aria-pressed', String(Boolean(selectedPaymentMethod) && active));
+  });
+  const summary = document.getElementById('paymentSummary');
+  const details = document.getElementById('customerDetails');
+  const helper = document.getElementById('paymentChoiceHelper');
+  if(!selectedPaymentMethod){
+    summary.hidden = true;
+    details.hidden = true;
+    helper.textContent = 'Selecciona tu talla y cómo deseas pagar.';
+    return;
+  }
+  const {base, discount, discounted} = paymentAmounts();
+  const priceLabel = moneyUSD(base);
+  const hasSize = Boolean(selectedSize);
+  summary.hidden = false;
+  helper.textContent = hasSize ? '✓ Forma de pago seleccionada' : 'Recuerda elegir tu talla antes de enviar el pedido.';
+  document.getElementById('paymentBasePrice').textContent = priceLabel;
+  const discountRow = document.getElementById('paymentDiscountRow');
+  discountRow.hidden = selectedPaymentMethod !== 'prepaid';
+  document.getElementById('paymentDiscount').textContent = '−' + moneyUSD(discount);
+  if(selectedPaymentMethod === 'cod'){
+    document.getElementById('paymentSummaryTitle').textContent = '¡Perfecto! Seleccionaste pagar al recibir.';
+    document.getElementById('paymentSummaryMessage').textContent = `Solo debes pagar el envío por adelantado y ${priceLabel} al recibir tu calzado. Completa los datos para coordinar la entrega.`;
+    document.getElementById('paymentTotalLabel').textContent = 'Calzado a pagar al recibir';
+    document.getElementById('paymentTotal').textContent = priceLabel;
+  } else {
+    document.getElementById('paymentSummaryTitle').textContent = '¡Excelente! Obtienes un 5% de descuento.';
+    document.getElementById('paymentSummaryMessage').textContent = `Ahorras ${moneyUSD(discount)} y el calzado te queda en ${moneyUSD(discounted)} con pago anticipado. Te enviaremos los datos de pago por WhatsApp.`;
+    document.getElementById('paymentTotalLabel').textContent = 'Calzado a pagar por anticipado';
+    document.getElementById('paymentTotal').textContent = moneyUSD(discounted);
+  }
+  details.hidden = false;
+  document.getElementById('formError').textContent = '';
+}
+
 /* ── MODAL ── */
 function openModal(p){
   currentProduct = p;
   selectedSize = null;
+  selectedPaymentMethod = null;
   document.getElementById('mVendor').textContent = p.Vendor;
   document.getElementById('mTitle').textContent = p.Title;
   document.getElementById('mCode').textContent = 'Código: ' + getProductCode(p);
@@ -1917,7 +2069,9 @@ function openModal(p){
       document.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('selected'));
       btn.classList.add('selected');
       selectedSize = s.size;
-      document.getElementById('sizeInfo').textContent = `✓ Talla ${s.size} seleccionada — $${parseFloat(s.price).toFixed(0)} USD`;
+      document.getElementById('sizeInfo').textContent = `✓ Talla ${s.size} seleccionada — ${moneyUSD(getSelectedShoePrice())} USD`;
+      document.getElementById('mPrice').textContent = moneyUSD(getSelectedShoePrice());
+      updatePaymentSummary();
     });
     sg.appendChild(btn);
   });
@@ -1926,6 +2080,7 @@ function openModal(p){
     const el=document.getElementById(id); if(el)el.value='';
   });
   document.getElementById('fCiudad').value='';
+  updatePaymentSummary();
   document.getElementById('orderSection').style.display='block';
   document.getElementById('orderSuccess').style.display='none';
   // Abrir modal
@@ -1936,7 +2091,7 @@ function openModal(p){
 function closeModal(){
   document.getElementById('modalOverlay').classList.remove('open');
   document.body.style.overflow='';
-  currentProduct=null;selectedSize=null;
+  currentProduct=null;selectedSize=null;selectedPaymentMethod=null;
 }
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
@@ -1945,7 +2100,9 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 function submitOrder(){
   const err = document.getElementById('formError');
   err.textContent='';
-  if(!selectedSize){err.textContent='⚠️ Por favor selecciona una talla primero.';return;}
+  if(!currentProduct){err.textContent='⚠️ Selecciona un producto.';return;}
+  if(!selectedSize){err.textContent='⚠️ Selecciona tu talla antes de continuar.';return;}
+  if(!selectedPaymentMethod){err.textContent='⚠️ Elige contra entrega o pago anticipado.';return;}
   const nombre   = document.getElementById('fNombre').value.trim();
   const apellido = document.getElementById('fApellido').value.trim();
   const cedula   = document.getElementById('fCedula').value.trim();
@@ -1954,23 +2111,36 @@ function submitOrder(){
   const direccion= document.getElementById('fDireccion').value.trim();
   if(!nombre)   {err.textContent='⚠️ Ingresa tu nombre.';return;}
   if(!apellido) {err.textContent='⚠️ Ingresa tus apellidos.';return;}
-  if(!cedula||cedula.length<8){err.textContent='⚠️ Ingresa una cédula válida.';return;}
-  if(!telefono||telefono.length<7){err.textContent='⚠️ Ingresa tu número de teléfono.';return;}
+  if(!cedula||cedula.replace(/\D/g,'').length<8){err.textContent='⚠️ Ingresa una cédula válida.';return;}
+  if(!telefono||telefono.replace(/\D/g,'').length<7){err.textContent='⚠️ Ingresa tu número de teléfono.';return;}
   if(!ciudad)   {err.textContent='⚠️ Selecciona tu ciudad.';return;}
   if(!direccion){err.textContent='⚠️ Ingresa tu dirección de entrega.';return;}
 
-  const precio = parseFloat(currentProduct.Price).toFixed(0);
-  const msg =
-`🛒 *NUEVO PEDIDO — PUMA FASHION STORE*
-💳 _Modalidad: PAGO AL RECIBIR (solo envío anticipado)_
+  const {base,discount,discounted} = paymentAmounts();
+  const prepaid = selectedPaymentMethod === 'prepaid';
+  const mode = prepaid ? 'PAGO ANTICIPADO (5% de descuento)' : 'CONTRA ENTREGA';
+  const paymentDetails = prepaid
+    ? `💵 *Precio original del calzado:* ${moneyUSD(base)} USD
+🎁 *Descuento 5%:* −${moneyUSD(discount)} USD
+✅ *Calzado con descuento:* ${moneyUSD(discounted)} USD
+🚚 *Envío:* Por confirmar según ciudad y dirección
+💳 *A pagar por anticipado:* ${moneyUSD(discounted)} del calzado + envío por confirmar
+📲 *Solicito indicaciones para realizar el pago anticipado.*`
+    : `💵 *Precio del calzado:* ${moneyUSD(base)} USD
+🚚 *Envío por anticipar:* Valor por confirmar según ciudad y dirección
+📦 *A pagar al recibir:* ${moneyUSD(base)} USD del calzado
+✅ *Confirmo que pagaré el costo del envío antes del despacho y el calzado al recibirlo.*`;
+  const msg = `🛒 *SOLICITUD DE PEDIDO — PUMA FASHION STORE*
+💳 *Modalidad:* ${mode}
 
 👟 *Producto:* ${currentProduct.Title}
 🔎 *Código:* ${getProductCode(currentProduct)}
 📏 *Talla:* ${selectedSize}
-💵 *Precio calzado:* $${precio} USD
+
+${paymentDetails}
 
 ━━━━━━━━━━━━━━━━
-👤 *DATOS DEL CLIENTE*
+👤 *DATOS PARA EL ENVÍO*
 ━━━━━━━━━━━━━━━━
 🔹 Nombre: ${nombre} ${apellido}
 🔹 Cédula: ${cedula}
@@ -1978,12 +2148,12 @@ function submitOrder(){
 🔹 Ciudad: ${ciudad}
 🔹 Dirección: ${direccion}
 
-━━━━━━━━━━━━━━━━
-✅ Cliente confirma pago al recibir.
-Paga SOLO el envío ahora. El calzado ($${precio}) lo paga al recibir y aprobar.`;
+📩 Por favor confirmen disponibilidad, costo de envío y los pasos para pagar.`;
 
-  const url = 'https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(msg);
-  window.open(url,'_blank');
+  const url = 'https://wa.me/' + WA_NUM + '?text=' + encodeURIComponent(msg);
+  const fallback = document.getElementById('waOrderFallback');
+  fallback.href = url;
+  window.open(url, '_blank');
   document.getElementById('orderSection').style.display='none';
   document.getElementById('orderSuccess').style.display='flex';
 }
